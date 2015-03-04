@@ -1,0 +1,45 @@
+#wrap .contactmain  {
+	padding : 10px;
+}
+
+.contactmain {
+	background: url(images/bg4.png) no-repeat top center;	
+	height: 540px;
+	color: white;
+}
+
+.contactmain h1 {
+	font-size : 45px;
+}
+
+.contactmain form {
+	position: absolute;
+	bottom : 0px;
+	padding-bottom : 40px;
+}
+
+.contactmain  p{
+	display: inline;
+	color : #dddddd;
+}
+
+.contactmain input {
+	float : right;
+	border : 0px;
+}
+
+#contact {	
+	float : right;
+	margin-top : 180px;
+	margin-right : 20px;
+	width : 480px;
+	background-color: rgba(255,255,255,0.7);
+	padding : 15px;
+	padding-bottom : 50px;
+	color : black;
+}
+
+
+.right-align {
+	float : right;
+}
