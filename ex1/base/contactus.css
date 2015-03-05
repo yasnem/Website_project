@@ -1,4 +1,4 @@
-.contactmain {
+#main {
 	background: url(images/bg4.png) no-repeat top center;
 	height: 540px;
 	color: white;
@@ -26,20 +26,24 @@ h1#contactustitle {
 	float: left;
 }
 
-.input {
+input {
 	float: right;
+	border: none;
+	padding: 1px;
 }
 
 textarea {
 	width: 100%;
 	height: 154px;
+	border: none;
 }
 
 button {
 	border: none;
 	background: #ffffff;
-	height: 22px;
-	width: 51px;
+	padding: 3px 5px;
+	font-family: Times New Roman, serif;
+	font-size: 14px;
 }
 
 #contact {

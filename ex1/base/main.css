@@ -117,30 +117,6 @@ body {
 	clear: both;
 }
 
-.indexmain {
-	background: url(images/bg1.png) no-repeat center center;
-	height: 570px;
-}
-
-.portfoliomain {
-	background: black url(images/bg3.png) no-repeat top center;
-	height: 631px;
-}
-
-.blogmain {
-	background: url(images/bg2.png) no-repeat top center;
-	height: 488px;
-}
-
-#main .maincontent {
-	height: 490px;
-	width: 398px;
-	padding: 20px;
-	background: #000000;
-	color: white;
-	opacity: 0.5;
-}
-
 #footer {
 	clear: both;
 	float: none;
@@ -185,62 +161,4 @@ img.socialmedia {
 img.qr {
 	width: 75px;
 	height: 75px;
-}
-
-ul#portfolio li {
-	display: block;
-	float: left;
-	width: 229px;
-	height: 256px;
-	margin-left: 20px;
-	background: #ffffff;
-	margin-bottom: 20px;
-}
-
-ul#portfolio li:nth-child(4n+1) {
-	margin-left: 0px;
-}
-
-ul#portfolio li:nth-child(n+5) {
-	height: 275px;
-}
-
-ul#portfolio li div img {
-	width: 100%;
-}
-
-ul#portfolio li div div {
-	margin: 20px;
-	color: #333333;
-}
-
-ul#blog li{
-	display: block;
-	float: left;
-	width: 478px;
-	height: 194px;
-	margin-left: 20px;
-	margin-bottom: 20px;
-	background: #ffffff;
-	opacity: 0.5;
-}
-
-ul#blog li:nth-child(2n+1) {
-	margin-left: 0px;
-}
-
-ul#blog li div {
-	margin: 20px;
-}
-
-ul#blog li div div {
-	margin: 0;
-}
-
-ul#blog li div div img {
-	width: 146px;
-	display: block;
-	float: left;
-	margin-right: 20px;
-	margin-bottom: 2px;
 }
