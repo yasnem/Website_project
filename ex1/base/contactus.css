@@ -1,45 +1,59 @@
-#wrap .contactmain  {
-	padding : 10px;
-}
-
 .contactmain {
-	background: url(images/bg4.png) no-repeat top center;	
+	background: url(images/bg4.png) no-repeat top center;
 	height: 540px;
 	color: white;
+	position: relative;
 }
 
-.contactmain h1 {
-	font-size : 45px;
+h1#contactustitle {
+	font-size: 45px;
 }
 
-.contactmain form {
+.clear:after {
+	content: ' ';
+	display: block;
+	clear: both;
+}
+
+#form {
 	position: absolute;
-	bottom : 0px;
-	padding-bottom : 40px;
+	bottom: 15px;
+	left: 10px;
+	width: 476px;
 }
 
-.contactmain  p{
-	display: inline;
-	color : #dddddd;
+.inputname {
+	float: left;
 }
 
-.contactmain input {
-	float : right;
-	border : 0px;
+.input {
+	float: right;
 }
 
-#contact {	
-	float : right;
-	margin-top : 180px;
-	margin-right : 20px;
-	width : 480px;
-	background-color: rgba(255,255,255,0.7);
-	padding : 15px;
-	padding-bottom : 50px;
-	color : black;
+textarea {
+	width: 100%;
+	height: 154px;
 }
 
+button {
+	border: none;
+	background: #ffffff;
+	height: 22px;
+	width: 51px;
+}
+
+#contact {
+	position: absolute;
+	bottom: 92px;
+	right: 28px;
+	height: 140px;
+	width: 492px;
+	color: black;
+	background: #ffffff;
+	opacity: 0.75;
+	padding: 20px;
+}
 
 .right-align {
-	float : right;
+	float: right;
 }
