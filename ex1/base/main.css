@@ -60,7 +60,7 @@ strong {
 
 body {
 	background: #414141;
-	
+	font-size : 62.5%;
 }
 
 #title h1 {
@@ -82,6 +82,45 @@ body {
 	
 }
 
+
+div[role="main"] {
+	clear: both;
+	border: 20px solid #dddddd;
+	padding: 20px;
+	font-size: 1.3em;
+	line-height: 1.65em;
+	width: 100%;
+}
+
+div[role="main"]:after {
+	content: ' ';
+	display: block;
+	clear: both;
+}
+
+#footer {
+	clear: both;
+	float: none;
+	border: 20px solid #dddddd;
+	border-top: none;
+	padding: 20px;
+	background: #027d8d;
+	color: #ffffff;
+	font-size: 1.5em;
+	line-height: 1.2em;
+	text-align: justify;
+}
+
+/* #footer div:first-of-type {
+	width: 211px;
+	margin-left: 0;
+}
+ */
+#footer:after {
+	content: ' ';
+	display: block;
+	clear: both;
+}
 
 
 /**************** BIG DEVICES ****************/
@@ -119,11 +158,23 @@ body {
 	#header #menu a:first-of-type {
 		margin-left: 55px;
 	}	
+	
+	#footer-container .footer-container-md div {
+		display : inline-block;
+	}
+	
+	#footer .footer-entry {
+		float: left;
+		display: block;
+		margin-left: 20px;
+		width: 22%;
+	}
+
 }
 
-/************** MEDIUM - BIG DEVICES ****************/
+/************** MEDIUM DEVICES ****************/
 
-@media screen and ( max-width:1024px ) {
+@media screen and ( max-width:1023px ) {
 
 	#wrap {
 		max-width: 1056px;
@@ -152,13 +203,13 @@ body {
 
 	#title h1 {
 		padding: 20px;
-		font-size: 22px;
+		font-size: 2.2em;
 		text-align : center;
 	}
 
 	#header #menu {
 		max-width : 482px;
-		width : 100%;
+		width : 96%;
 		display : block;
 		margin-left : auto;
 		margin-right : auto;
@@ -166,8 +217,8 @@ body {
 
 	#header #menu a {
 		max-width: 113px;
-		width : 25%;
-		margin-left: 10px;
+		width : 23%;
+		margin-left: 2%;
 	}
 	
 	#header #menu a:first-of-type {
@@ -178,55 +229,27 @@ body {
 		width: 100%;
 		height: 62px;
 		display: block;
-		
 	}
-}
+	
+	#footer .footer-container-md {
+		display : block;
+		width : 90%;
+		clear : both;
+		padding-top : 25px;
+		margin : auto;
+	}
+	
+	#footer .footer-entry {
+		float : left;
+		display: block;
+		margin-left: 20px;
+		width: 40%;
+	}
+	
+	#footer .footer-container-md div:last-of-type {
+		float : right;
+	}
 
-
-div[role="main"] {
-	clear: both;
-	border: 20px solid #dddddd;
-	padding: 20px;
-	font-size: 13px;
-	line-height: 1.65em;
-	width: 100%;
-}
-
-div[role="main"]:after {
-	content: ' ';
-	display: block;
-	clear: both;
-}
-
-#footer {
-	clear: both;
-	float: none;
-	border: 20px solid #dddddd;
-	border-top: none;
-	padding: 20px;
-	background: #027d8d;
-	color: #ffffff;
-	font-size: 15px;
-	line-height: 1.2em;
-	text-align: justify;
-}
-
-#footer .footer-entry {
-	float: left;
-	display: block;
-	margin-left: 20px;
-	width: 235px;
-}
-
-#footer div:first-of-type {
-	width: 211px;
-	margin-left: 0;
-}
-
-#footer:after {
-	content: ' ';
-	display: block;
-	clear: both;
 }
 
 img.project {
@@ -253,14 +276,31 @@ img.qr {
 
 #maincontent {
 	height: 490px;
-	width: 398px;
+	width : 40.8%;
 	padding: 20px;
 	background: #000000;
 	color: white;
 	opacity: 0.5;
 }
 
-/* styles for blog page */
+/******************* BIG DEVICES ********************/
+
+@media screen and ( min-width:1024px ) {
+	#maincontent {
+		width : 40.8%;
+	}
+}
+
+/***************** MEDIUM DEVICES *******************/
+
+@media screen and ( max-width:1024px ) {
+	#maincontent {
+		width : 40.8%;
+		min-width : 310px;
+	}
+}
+
+/******************** styles for blog page **********************/
 #blogmain {
 	background: url(images/bg2.png) no-repeat top center;
 	height: 488px;
@@ -339,7 +379,7 @@ ul#portfolio li div div {
 }
 
 h1#contactustitle {
-	font-size: 45px;
+	font-size: 4.5em;
 }
 
 .clear:after {
@@ -376,7 +416,7 @@ button {
 	background: #ffffff;
 	padding: 3px 5px;
 	font-family: Times New Roman, serif;
-	font-size: 14px;
+	font-size: 1.4em;
 }
 
 #contact {
