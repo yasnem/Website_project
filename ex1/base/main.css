@@ -174,7 +174,7 @@ div[role="main"]:after {
 
 /************** MEDIUM DEVICES ****************/
 
-@media screen and ( max-width:1023px ) {
+@media screen and (max-width:1023px ) and ( min-width:768px ) {
 
 	#wrap {
 		max-width: 1056px;
@@ -217,7 +217,7 @@ div[role="main"]:after {
 
 	#header #menu a {
 		max-width: 113px;
-		width : 23%;
+		width : 23.5%;
 		margin-left: 2%;
 	}
 	
@@ -252,9 +252,82 @@ div[role="main"]:after {
 
 }
 
+/************** SMALL-MEDIUM DEVICES ****************/
+
+@media screen and ( max-width:767px ) and ( min-width : 480px ){
+	#wrap {
+		max-width: 1056px;
+		width : 96%;
+		margin: 30px auto;
+		background : #dddddd;
+	}
+
+
+	#header {
+		height: 134px;
+	}
+
+	#header #menu {
+		width : 100%;
+		height : 62px;
+	}
+	
+	#title {
+		max-width : 422px;
+		width: 100%;
+		background: #dddddd;
+		margin-left : auto;
+		margin-right : auto;
+	}
+
+	#title h1 {
+		padding: 20px;
+		font-size: 2.2em;
+		text-align : center;
+	}
+
+	#header #menu {
+		max-width : 482px;
+		width : 91.5%;
+		display : block;
+		margin-left : auto;
+		margin-right : auto;
+	}
+
+	#header #menu a {
+		max-width: 113px;
+		width : 23.5%;
+		margin-left: 2%;
+	}
+	
+	#header #menu a:first-of-type {
+		margin-left: 0px;
+	}	
+
+	#header #menu a img {
+		width: 100%;
+		height: 62px;
+		display: block;
+	}
+	
+	#footer .footer-entry {
+		float : left;
+		text-align : center;
+		clear : both;
+		display: block;
+		margin-left: 20px;
+		width: 96%;
+		margin-bottom : 20px;
+		margin-top : 20px;
+	}
+	
+	
+
+}
+
 img.project {
-	width: 188px;
-	height: 129px;
+	max-width: 188px;
+	width : 96%;
 }
 
 img.socialmedia {
@@ -276,7 +349,6 @@ img.qr {
 
 #maincontent {
 	height: 490px;
-	width : 40.8%;
 	padding: 20px;
 	background: #000000;
 	color: white;
@@ -293,12 +365,31 @@ img.qr {
 
 /***************** MEDIUM DEVICES *******************/
 
-@media screen and ( max-width:1024px ) {
+@media screen and ( max-width:1024px ) and (min-width:768px) {
 	#maincontent {
 		width : 40.8%;
 		min-width : 310px;
 	}
 }
+
+/***************** SMALL-MEDIUM DEVICES *******************/
+
+@media screen and ( max-width:767px ) and (min-width:480px) {
+	#maincontent {
+		width : 96%;
+		margin-left : auto;
+		margin-right : auto;
+	}
+}
+
+#maincontent {
+	height: 490px;
+	padding: 20px;
+	background: #000000;
+	color: white;
+	opacity: 0.5;
+}
+
 
 /******************** styles for blog page **********************/
 #blogmain {
