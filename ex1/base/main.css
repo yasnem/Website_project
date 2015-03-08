@@ -167,7 +167,7 @@ img.qr {
 	#header #menu {
 		width : 56%;
 	}
-
+	
 	#header #menu a {
 		width : 19%;
 		margin-left: 10px;
@@ -287,9 +287,45 @@ img.qr {
 
 }
 
+/************** SMALL DEVICES ****************/
 
-
-
+@media screen and ( max-width:479px ) {
+	
+	#header {
+		height : 206px;
+	}
+	
+	#header #menu {
+		width : 100%;
+		max-width : 280px;
+		height : 144px;
+		padding-left : 20px;
+		padding-right : 20px;
+		margin-left : auto;
+		margin-right : auto;
+	}
+	
+	#header #menu a:nth-child(3) {
+		clear : left;
+		margin-left : 0px;
+	}
+	
+	#header #menu a {
+		max-width: 113px;
+		width : 47%;
+		margin-left: 5%;
+		margin-bottom : 10px;
+	}
+	
+	#footer .footer-entry {
+		text-align : center;
+		clear : both;
+		width: 96%;
+		margin-bottom : 20px;
+		margin-top : 20px;
+	}
+	
+}
 
 
 /* styles for index page */
