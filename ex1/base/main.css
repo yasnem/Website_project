@@ -148,7 +148,7 @@ img.qr {
 }
 
 
-/**************** BIG DEVICES ****************/
+/**************** BIG DEVICES - COMMON CODE ****************/
 
 @media screen and ( min-width:1024px ) {
 	#title {
@@ -251,7 +251,7 @@ img.qr {
 }
 
 
-/************** MEDIUM DEVICES ****************/
+/************** MEDIUM DEVICES - COMMON CODE ****************/
 
 @media screen and (max-width:1023px ) and ( min-width:768px ) {
 
@@ -269,7 +269,7 @@ img.qr {
 
 }
 
-/************** SMALL-MEDIUM DEVICES ****************/
+/************** SMALL-MEDIUM DEVICES - COMMON CODE ****************/
 
 @media screen and ( max-width:767px ) and ( min-width : 480px ){
 	
@@ -287,7 +287,7 @@ img.qr {
 
 }
 
-/************** SMALL DEVICES ****************/
+/************** SMALL DEVICES - COMMON CODE ****************/
 
 @media screen and ( max-width:479px ) {
 	
@@ -327,6 +327,7 @@ img.qr {
 	
 }
 
+/********** Page specific css styles **********/
 
 /* styles for index page */
 #indexmain {
@@ -335,7 +336,7 @@ img.qr {
 }
 
 #maincontent {
-	height: 490px;
+	height: 493px;
 	padding: 20px;
 	background: #000000;
 	color: white;
@@ -367,14 +368,6 @@ img.qr {
 		margin-left : auto;
 		margin-right : auto;
 	}
-}
-
-#maincontent {
-	height: 490px;
-	padding: 20px;
-	background: #000000;
-	color: white;
-	opacity: 0.5;
 }
 
 
@@ -456,7 +449,7 @@ ul#portfolio li div div {
 	position: relative;
 }
 
-h1#contactustitle {
+#contactustitle h1 {
 	font-size: 4.5em;
 }
 
@@ -511,4 +504,59 @@ button {
 
 .right-align {
 	float: right;
+}
+
+/******************* BIG DEVICES ********************/
+
+@media screen and ( min-width:1024px ) {
+	/*probably fine here*/
+}
+
+/***************** MEDIUM DEVICES *******************/
+
+@media screen and ( max-width:1024px ) and (min-width:768px) {
+	#contactustitle h1 {
+		text-align: center;
+		position: absolute;
+		left: 10%;
+		width: 70%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#form {
+		position: absolute;
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#contact {
+		position: absolute;
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+/***************** SMALL-MEDIUM DEVICES *******************/
+
+@media screen and ( max-width:767px ) and (min-width:480px) {
+	#contactustitle h1 {
+		text-align: center;
+		position: absolute;
+		width: 70%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#form {
+		position: absolute;
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#contact {
+		position: absolute;
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
