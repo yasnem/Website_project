@@ -494,7 +494,7 @@ ul#portfolio li div img {
 }
 
 ul#portfolio li div div {
-	margin: 20px;
+	margin: 8%;
 	color: #333333;
 }
 
@@ -519,6 +519,10 @@ ul#portfolio li div div {
 	ul#portfolio li:nth-child(2n+1) {
 		clear: both;
 	}
+	
+	ul#portfolio li div div {
+		margin: 6%;
+	}
 }
 
 /***************** SMARTPHONE PORTRAIT *******************/
@@ -532,6 +536,10 @@ ul#portfolio li div div {
 		width: 92%;
 		margin: 4% 0 0 4% !important;
 		clear: both;
+	}
+	
+	ul#portfolio li div div {
+		margin: 4%;
 	}
 }
 
@@ -603,6 +611,8 @@ button {
 
 .right-align {
 	float: right;
+	text-align: right;
+	clear: both;
 }
 
 /***************** TABLET PORTRAIT *******************/
