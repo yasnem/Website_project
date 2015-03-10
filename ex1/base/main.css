@@ -148,7 +148,7 @@ img.qr {
 }
 
 
-/**************** BIG DEVICES ****************/
+/**************** BIG DEVICES - COMMON CODE ****************/
 
 @media screen and ( min-width:1024px ) {
 	#title {
@@ -251,7 +251,7 @@ img.qr {
 }
 
 
-/************** MEDIUM DEVICES ****************/
+/************** MEDIUM DEVICES - COMMON CODE ****************/
 
 @media screen and (max-width:1023px ) and ( min-width:768px ) {
 
@@ -269,7 +269,7 @@ img.qr {
 
 }
 
-/************** SMALL-MEDIUM DEVICES ****************/
+/************** SMALL-MEDIUM DEVICES - COMMON CODE ****************/
 
 @media screen and ( max-width:767px ) and ( min-width : 480px ){
 	
@@ -287,7 +287,7 @@ img.qr {
 
 }
 
-/************** SMALL DEVICES ****************/
+/************** SMALL DEVICES - COMMON CODE ****************/
 
 @media screen and ( max-width:479px ) {
 	
@@ -327,6 +327,7 @@ img.qr {
 	
 }
 
+/********** Page specific css styles **********/
 
 /* styles for index page */
 #indexmain {
@@ -335,7 +336,7 @@ img.qr {
 }
 
 #maincontent {
-	height: 490px;
+	height: 493px;
 	padding: 20px;
 	background: #000000;
 	color: white;
@@ -367,14 +368,6 @@ img.qr {
 		margin-left : auto;
 		margin-right : auto;
 	}
-}
-
-#maincontent {
-	height: 490px;
-	padding: 20px;
-	background: #000000;
-	color: white;
-	opacity: 0.5;
 }
 
 
@@ -456,21 +449,10 @@ ul#portfolio li div div {
 	position: relative;
 }
 
-h1#contactustitle {
-	font-size: 4.5em;
-}
-
 .clear:after {
 	content: ' ';
 	display: block;
 	clear: both;
-}
-
-#form {
-	position: absolute;
-	bottom: 15px;
-	left: 10px;
-	width: 476px;
 }
 
 .inputname {
@@ -498,17 +480,113 @@ button {
 }
 
 #contact {
-	position: absolute;
-	bottom: 92px;
-	right: 28px;
-	height: 140px;
-	width: 492px;
-	color: black;
 	background: #ffffff;
 	opacity: 0.75;
 	padding: 20px;
+	color: black;
 }
 
 .right-align {
 	float: right;
+}
+
+/******************* BIG DEVICES ********************/
+
+@media screen and ( min-width:1024px ) {
+	#contact {
+		right: 28px;
+		height: 140px;
+		max-width: 492px;
+		width : 47.5%;
+		position: absolute;
+		bottom: 92px;
+		font-size : 0.98em;
+	}
+	
+	#form {
+		position: absolute;
+		bottom: 15px;
+		left: 10px;
+		max-width: 476px;
+		width : 47.5%;
+	}
+	
+	#contactustitle h1 {
+		font-size: 4.5em;
+	}
+
+}
+
+/***************** MEDIUM DEVICES *******************/
+
+@media screen and ( max-width:1023px ) and (min-width:768px) {
+	#contactustitle h1 {
+		text-align: center;
+		left: 10%;
+		width: 70%;
+		margin-left: auto;
+		margin-right: auto;
+		font-size: 4.5em;
+	}
+	#form {
+		width: 80%;
+		max-width : 600px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	#contact {
+		top : 20px;
+		width: 80%;
+		max-width : 600px;
+		margin-top : 50px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+/***************** SMALL-MEDIUM DEVICES *******************/
+
+@media screen and ( max-width:767px ) and (min-width:480px) {
+	
+	#contactustitle h1 {
+		text-align: center;
+		left: 10%;
+		width: 100%;
+		font-size: 3.5em;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#form {
+		width: 100%;
+		max-width : 500px;
+		margin-left: auto;
+		margin-right: auto;
+		font-size : 1.2em;
+	}
+	
+	#form  .space{
+		width :100%;
+		display : block;
+		height : 5px;
+	}
+	
+	#contactusmain {
+		font-size : 1.0em;
+	}
+	
+	#contact {
+		max-width : 500px;
+		top : 20px;
+		width: 100%;
+		margin-top : 50px;
+		margin-left: auto;
+		margin-right: auto;
+		
+	}
+	
+	#form textarea {
+		margin-top : 10px;
+	}
+
 }
