@@ -86,7 +86,6 @@ body {
 div[role="main"] {
 	clear: both;
 	border: 20px solid #dddddd;
-	padding: 20px;
 	font-size: 1.3em;
 	line-height: 1.65em;
 	width: 100%;
@@ -103,19 +102,21 @@ div[role="main"]:after {
 	float: none;
 	border: 20px solid #dddddd;
 	border-top: none;
-	padding: 20px;
 	background: #027d8d;
 	color: #ffffff;
 	font-size: 1.5em;
 	line-height: 1.2em;
 	text-align: justify;
+	width: 100%;
+	padding-bottom: 2%;
 }
 
-/* #footer div:first-of-type {
-	width: 211px;
-	margin-left: 0;
+#footer .footer-entry {
+	width: 22.5%;
+	margin: 2% 0 0 2%;
+	float: left;
 }
- */
+
 #footer:after {
 	content: ' ';
 	display: block;
@@ -123,8 +124,7 @@ div[role="main"]:after {
 }
 
 #wrap {
-	max-width: 1056px;
-	width : 96%;
+	max-width: 1024px;
 	margin: 30px auto;
 }
 
@@ -146,11 +146,9 @@ img.qr {
 	width: 75px;
 	height: 75px;
 }
+/**************** DESKTOP ****************/
 
-
-/**************** BIG DEVICES - COMMON CODE ****************/
-
-@media screen and ( min-width:1024px ) {
+@media screen and (min-width:1024px) {
 	#title {
 		width: 40%;
 		background: #dddddd;
@@ -174,27 +172,11 @@ img.qr {
 	}
 	#header #menu a:first-of-type {
 		margin-left: 55px;
-	}	
-	
-	#footer-container .footer-container-md div {
-		display : inline-block;
 	}
-	
-	#footer .footer-entry {
-		float: left;
-		display: block;
-		margin-left: 20px;
-		width: 22%;
-	}
-
 }
 
-/************** SMALLER DEVICES - COMMON CODE ***************/
-@media screen and (max-width:1023px ) {
-	#wrap {
-		background : #dddddd;
-	}
-	
+/************** TABLET AND SMARTPHONE ***************/
+@media screen and (max-width:1023px) {	
 	#header {
 		height: 134px;
 	}
@@ -234,62 +216,79 @@ img.qr {
 		height: 62px;
 		display: block;
 	}
-	
-	#footer .footer-container-md {
-		display : block;
-		width : 90%;
-		clear : both;
-		padding-top : 25px;
-		margin : auto;
-	}
-	
-	#footer .footer-entry {
-		float : left;
-		display: block;
-		margin-left: 20px;		
+}
+
+/************** TABLET & SMARTPHONE ****************/
+
+@media screen and (max-width: 1023px) {
+	#wrap {
+		background: #dddddd;
 	}
 }
 
+/************** TABLET PORTRAIT ****************/
 
-/************** MEDIUM DEVICES - COMMON CODE ****************/
-
-@media screen and (max-width:1023px ) and ( min-width:768px ) {
-
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+	#wrap {
+		width: 768px;
+	}
+	
 	#header #menu {
 		width : 96%;
 	}
 	
 	#footer .footer-entry {
-		width: 40%;
+		width: 47%;
+		margin: 2% 0 0 2%;
+		float: left;
+		text-align: center;
 	}
 	
-	#footer .footer-container-md div:last-of-type {
-		float : right;
+	#footer .footer-entry:nth-of-type(2n+1) {
+		clear: both;
 	}
-
 }
 
-/************** SMALL-MEDIUM DEVICES - COMMON CODE ****************/
+/************** SMARTPHONE LANDSCAPE ****************/
 
-@media screen and ( max-width:767px ) and ( min-width : 480px ){
+@media screen and (max-width: 767px) and (min-width: 480px){
+	#wrap {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
 	
 	#header #menu {
 		width : 91.5%;
 	}
 	
-	#footer .footer-entry {
-		text-align : center;
-		clear : both;
-		width: 96%;
-		margin-bottom : 20px;
-		margin-top : 20px;
+	div[role="main"] {
+		border: none;
 	}
-
+	
+	#footer {
+		border: none;
+		padding-bottom: 4%;
+	}
+	
+	#footer .footer-entry {
+		width: 44%;
+		margin: 4% 0 0 4%;
+		float: left;
+		text-align: center;
+	}
+	
+	#footer .footer-entry:nth-of-type(2n+1) {
+		clear: both;
+	}
 }
 
-/************** SMALL DEVICES - COMMON CODE ****************/
+/************** SMARTPHONE PORTRAIT ****************/
 
-@media screen and ( max-width:479px ) {
+@media screen and (max-width: 479px) {
+	#wrap {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
 	
 	#header {
 		height : 206px;
@@ -317,83 +316,102 @@ img.qr {
 		margin-bottom : 10px;
 	}
 	
-	#footer .footer-entry {
-		text-align : center;
-		clear : both;
-		width: 96%;
-		margin-bottom : 20px;
-		margin-top : 20px;
+	div[role="main"] {
+		border: none;
 	}
 	
+	#footer {
+		border: none;
+		padding-bottom: 1%;
+		padding-top: 4%;
+	}
+	
+	#footer .footer-entry {
+		width: 92%;
+		margin: 0 0 4% 4%;
+		float: none;
+		text-align: center;
+	}
 }
 
-/********** Page specific css styles **********/
-
 /* styles for index page */
+
 #indexmain {
-	background: url(images/bg1.png) no-repeat center center;
-	height: 570px;
+	background: black url(images/bg1.png) no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
 #maincontent {
-	height: 493px;
-	padding: 20px;
+	margin: 2%;
+	min-height: 490px;
+	padding: 2%;
 	background: #000000;
 	color: white;
 	opacity: 0.5;
+	width: 47%;
 }
 
-/******************* BIG DEVICES ********************/
+/***************** TABLET PORTRAIT *******************/
 
-@media screen and ( min-width:1024px ) {
+@media screen and ( max-width:1023px ) and (min-width:768px) {
 	#maincontent {
-		width : 40.8%;
+		width : 47%;
 	}
 }
 
-/***************** MEDIUM DEVICES *******************/
+/***************** SMARTPHONE (LANDSCAPE AND PORTRAIT) *******************/
 
-@media screen and ( max-width:1024px ) and (min-width:768px) {
+@media screen and (max-width:767px) {
+	#indexmain {
+		padding: 4%;
+	}
+	
 	#maincontent {
-		width : 40.8%;
-		min-width : 310px;
+		margin: 0;
+		width : 100%;
 	}
 }
-
-/***************** SMALL-MEDIUM DEVICES *******************/
-
-@media screen and ( max-width:767px ) and (min-width:480px) {
-	#maincontent {
-		width : 96%;
-		margin-left : auto;
-		margin-right : auto;
-	}
-}
-
 
 /******************** styles for blog page **********************/
+
 #blogmain {
 	background: url(images/bg2.png) no-repeat top center;
-	height: 488px;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
-ul#blog li{
+ul#blog {
+	padding-bottom: 2%;
+	display: block;
+}
+
+ul#blog:after {
+	content: ' ';
+	clear: both;
+	display: block;
+}
+
+ul#blog li {
 	display: block;
 	float: left;
-	width: 478px;
-	height: 194px;
-	margin-left: 20px;
-	margin-bottom: 20px;
+	width: 47%;
+	margin: 2% 0 0 2%;
 	background: #ffffff;
 	opacity: 0.5;
+	padding: 2%;
 }
 
 ul#blog li:nth-child(2n+1) {
-	margin-left: 0px;
+	clear: both;
 }
 
 ul#blog li div {
-	margin: 20px;
+	height: 100%;
 }
 
 ul#blog li div div {
@@ -401,35 +419,63 @@ ul#blog li div div {
 }
 
 ul#blog li div div img {
-	width: 146px;
+	width: 100%;
+	max-width: 146px;
 	display: block;
 	float: left;
 	margin-right: 20px;
 	margin-bottom: 2px;
 }
 
+/***************** TABLET PORTRAIT *******************/
+
+@media screen and (max-width:1023px) and (min-width:768px) {
+	
+}
+
+/***************** SMARTPHONE (LANDSCAPE AND PORTRAIT) *******************/
+
+@media screen and (max-width:767px) {
+	ul#blog {
+		padding-bottom: 4%;
+	}
+	
+	ul#blog li {
+		width: 92%;
+		margin: 4% 0 0 4% !important;
+	}
+}
+
+
 /* styles for portfolio page */
 #portfoliomain {
 	background: black url(images/bg3.png) no-repeat top center;
-	height: 631px;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+ul#portfolio {
+	padding-bottom: 2%;
+}
+
+ul#portfolio:after {
+	content: ' ';
+	clear: both;
+	display: block;
 }
 
 ul#portfolio li {
 	display: block;
 	float: left;
-	width: 229px;
-	height: 256px;
-	margin-left: 20px;
+	width: 22.5%;
+	margin: 2% 0 0 2%;
 	background: #ffffff;
-	margin-bottom: 20px;
 }
 
 ul#portfolio li:nth-child(4n+1) {
-	margin-left: 0px;
-}
-
-ul#portfolio li:nth-child(n+5) {
-	height: 275px;
+	clear: both;
 }
 
 ul#portfolio li div img {
@@ -441,18 +487,71 @@ ul#portfolio li div div {
 	color: #333333;
 }
 
+/***************** TABLET PORTRAIT *******************/
+
+@media screen and (max-width:1023px) and (min-width:768px) {
+	
+}
+
+/***************** SMARTPHONE LANDSCAPE *******************/
+
+@media screen and (max-width:767px) and (min-width:480px) {
+	ul#portfolio {
+		padding-bottom: 4%;
+	}
+	
+	ul#portfolio li {
+		width: 44%;
+		margin: 4% 0 0 4% !important;
+	}
+	
+	ul#portfolio li:nth-child(2n+1) {
+		clear: both;
+	}
+}
+
+/***************** SMARTPHONE PORTRAIT *******************/
+
+@media screen and (max-width: 479px) {
+	ul#portfolio {
+		padding-bottom: 4%;
+	}
+	
+	ul#portfolio li {
+		width: 92%;
+		margin: 4% 0 0 4% !important;
+		clear: both;
+	}
+}
+
 /* styles for contact us page */
 #contactusmain {
 	background: url(images/bg4.png) no-repeat top center;
-	height: 540px;
 	color: white;
 	position: relative;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	width: 100%;
+	padding-bottom: 2%;
 }
 
-.clear:after {
-	content: ' ';
+#contactustitle {
+	margin: 2% 0 20% 2%;
+	width: 96%;
+	float: none;
+}
+
+#contactustitle h1 {
+	font-size: 4.5em;
+}
+
+#form, #contact {
 	display: block;
-	clear: both;
+	width: 47%;
+	margin: 2% 0 0 2%;
+	float: left;
 }
 
 .inputname {
@@ -467,126 +566,54 @@ input {
 
 textarea {
 	width: 100%;
-	height: 154px;
+	height: 100%;
 	border: none;
 }
 
 button {
 	border: none;
 	background: #ffffff;
-	padding: 3px 5px;
+	padding: 1%;
 	font-family: Times New Roman, serif;
-	font-size: 1.4em;
 }
 
 #contact {
+	color: black;
 	background: #ffffff;
 	opacity: 0.75;
-	padding: 20px;
-	color: black;
+	padding: 2%;
+}
+
+#contact div:after {
+	content: ' ';
+	display: block;
+	clear: both;
 }
 
 .right-align {
 	float: right;
 }
 
-/******************* BIG DEVICES ********************/
+/***************** TABLET PORTRAIT *******************/
 
-@media screen and ( min-width:1024px ) {
-	#contact {
-		right: 28px;
-		height: 140px;
-		max-width: 492px;
-		width : 47.5%;
-		position: absolute;
-		bottom: 92px;
-		font-size : 0.98em;
-	}
+@media screen and (max-width:1023px) and (min-width:768px) {
 	
-	#form {
-		position: absolute;
-		bottom: 15px;
-		left: 10px;
-		max-width: 476px;
-		width : 47.5%;
-	}
-	
-	#contactustitle h1 {
-		font-size: 4.5em;
-	}
-
 }
 
-/***************** MEDIUM DEVICES *******************/
+/***************** SMARTPHONE *******************/
 
-@media screen and ( max-width:1023px ) and (min-width:768px) {
-	#contactustitle h1 {
-		text-align: center;
-		left: 10%;
-		width: 70%;
-		margin-left: auto;
-		margin-right: auto;
-		font-size: 4.5em;
-	}
-	#form {
-		width: 80%;
-		max-width : 600px;
-		margin-left: auto;
-		margin-right: auto;
-	}
-	
-	#contact {
-		top : 20px;
-		width: 80%;
-		max-width : 600px;
-		margin-top : 50px;
-		margin-left: auto;
-		margin-right: auto;
-	}
-}
-
-/***************** SMALL-MEDIUM DEVICES *******************/
-
-@media screen and ( max-width:767px ) and (min-width:480px) {
-	
-	#contactustitle h1 {
-		text-align: center;
-		left: 10%;
-		width: 100%;
-		font-size: 3.5em;
-		margin-left: auto;
-		margin-right: auto;
-	}
-	#form {
-		width: 100%;
-		max-width : 500px;
-		margin-left: auto;
-		margin-right: auto;
-		font-size : 1.2em;
-	}
-	
-	#form  .space{
-		width :100%;
-		display : block;
-		height : 5px;
-	}
-	
+@media screen and (max-width:767px) {
 	#contactusmain {
-		font-size : 1.0em;
+		padding-bottom: 4%;
 	}
 	
-	#contact {
-		max-width : 500px;
-		top : 20px;
-		width: 100%;
-		margin-top : 50px;
-		margin-left: auto;
-		margin-right: auto;
-		
+	#form, #contact {
+		width: 92%;
+		margin: 4% 0 0 4%;
+		float: none;
 	}
 	
-	#form textarea {
-		margin-top : 10px;
+	#contactustitle {
+		margin: 0 0 10% 4%;
 	}
-
 }
