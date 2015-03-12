@@ -643,13 +643,32 @@ button {
 /***************** SMARTPHONE *******************/
 
 @media screen and (max-width:767px) {
+	.flexcontainer {
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+		flex-direction: row-reverse;
+		flex-wrap: wrap;
+		align-items: flex-start;
+	}
+
+	#form {
+		order: 2;
+	}
+	
+	#contact {
+		order: 1;
+	}
+	
 	#contactusmain {
 		padding-bottom: 4%;
 	}
 	
 	#form, #contact {
 		width: 92%;
-		margin: 4% 0 0 4%;
+		margin: 4% 4% 0 4%;
 		float: none;
 	}
 	
