@@ -146,6 +146,11 @@ img.qr {
 	width: 75px;
 	height: 75px;
 }
+
+p {
+	font-size: 1.5em;
+}
+
 /**************** DESKTOP ****************/
 
 @media screen and (min-width:1024px) {
@@ -229,6 +234,10 @@ img.qr {
 /************** TABLET PORTRAIT ****************/
 
 @media screen and (max-width: 1023px) and (min-width: 768px) {
+	body {
+		font-size : 65%;
+	}
+	
 	#wrap {
 		width: 768px;
 	}
@@ -252,6 +261,10 @@ img.qr {
 /************** SMARTPHONE LANDSCAPE ****************/
 
 @media screen and (max-width: 767px) and (min-width: 480px){
+	body {
+		font-size : 67.5%;
+	}
+	
 	#wrap {
 		margin-top: 0;
 		margin-bottom: 0;
@@ -285,6 +298,10 @@ img.qr {
 /************** SMARTPHONE PORTRAIT ****************/
 
 @media screen and (max-width: 479px) {
+	body {
+		font-size : 70%;
+	}
+	
 	#wrap {
 		margin-top: 0;
 		margin-bottom: 0;
@@ -571,6 +588,7 @@ ul#portfolio li div div {
 	width: 47%;
 	margin: 2% 0 0 2%;
 	float: left;
+	font-size: 1em;
 }
 
 .inputname {
@@ -594,6 +612,7 @@ button {
 	background: #ffffff;
 	padding: 1%;
 	font-family: Times New Roman, serif;
+	font-size: 1em;
 }
 
 #contact {
@@ -624,13 +643,32 @@ button {
 /***************** SMARTPHONE *******************/
 
 @media screen and (max-width:767px) {
+	.flexcontainer {
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+		flex-direction: row-reverse;
+		flex-wrap: wrap;
+		align-items: flex-start;
+	}
+
+	#form {
+		order: 2;
+	}
+	
+	#contact {
+		order: 1;
+	}
+	
 	#contactusmain {
 		padding-bottom: 4%;
 	}
 	
 	#form, #contact {
 		width: 92%;
-		margin: 4% 0 0 4%;
+		margin: 4% 4% 0 4%;
 		float: none;
 	}
 	
