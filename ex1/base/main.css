@@ -632,9 +632,31 @@ button {
 		width: 92%;
 		margin: 4% 0 0 4%;
 		float: none;
+		margin-left: auto;
+		margin-right: auto;
 	}
 	
 	#contactustitle {
 		margin: 0 0 10% 4%;
 	}
+	
+	.flexcontainer {
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+		flex-direction: row-reverse;
+		flex-wrap: wrap;
+		align-items: flex-start;
+	}
+
+	#form {
+		order: 2;
+	}
+	
+	#contact {
+		order: 1;
+	}
+
 }
