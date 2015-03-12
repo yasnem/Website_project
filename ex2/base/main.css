@@ -61,6 +61,7 @@ strong {
 body {
 	background: #414141;
 	font-size : 62.5%;
+	position: relative;
 }
 
 #title h1 {
@@ -674,5 +675,83 @@ button {
 	
 	#contactustitle {
 		margin: 0 0 10% 4%;
+	}
+}
+
+/***************** NEW MENUE *******************/
+#newmenu {
+	/*box-sizing: content-box;*/
+	width: 150px;
+	height: 150px;
+	background: #fff;
+	border: 15px solid #ffffff;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	opacity: 0.1;
+	transition: opacity 1s;
+	
+	position: absolute;
+	top: -10px;
+	left: 10px;
+	z-index: 10;
+}
+
+#newmenu:hover {
+	opacity: 1;
+	transition: opacity 0.5s;
+}
+
+#newmenu #orange {
+	position: absolute;
+	width: 26px;
+	height: 26px;
+	top: -13px;
+	left: -13px;
+	z-index: 100;
+}
+
+#newmenu #star {
+	position: absolute;
+	width: 13px;
+	height: 13px;
+	top: -14px;
+	left: 15px;
+}
+
+#newmenu a.menu-entry {
+	width: 50%;
+	height: 50%;
+	float: left;
+	display: block;
+}
+
+#newmenu a.menu-entry img {
+	width: 100%;
+}
+
+#newmenu a.menu-entry img:hover {
+	-webkit-animation: myfirst 0.25s linear 0.1s infinite normal;
+}
+
+@-webkit-keyframes myfirst {
+	0% {-webkit-transform: rotate(0deg) scale(1);}
+	25% {-webkit-transform: rotate(4deg) scale(1.05);}
+	50% {-webkit-transform: rotate(0deg) scale(1);}
+	75% {-webkit-transform: rotate(-4deg) scale(1.05);}
+	100% {-webkit-transform: rotate(0deg) scale(1);}
+}
+
+@keyframes myfirst {
+	0% {transform: rotate(0deg) scale(1);}
+	25% {transform: rotate(4deg) scale(1.05);}
+	50% {transform: rotate(0deg) scale(1);}
+	75% {transform: rotate(-4deg) scale(1.05);}
+	100% {transform: rotate(0deg) scale(1);}
+}
+
+@media screen and (max-width:767px) {
+	#newmenu {
+		top: 10px;
 	}
 }
