@@ -82,6 +82,7 @@ body {
 	
 }
 
+
 div[role="main"] {
 	clear: both;
 	border: 20px solid #dddddd;
@@ -239,7 +240,7 @@ p {
 	
 	#wrap {
 		width: 768px;
-	} 
+	}
 	
 	#header #menu {
 		width : 96%;
@@ -648,7 +649,7 @@ button {
 		display: -ms-flexbox;
 		display: -webkit-flex;
 		display: flex;
-		flex-direction: row;
+		flex-direction: row-reverse;
 		flex-wrap: wrap;
 		align-items: flex-start;
 	}

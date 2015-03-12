@@ -1,0 +1,9 @@
+Project contains now 4 html files corresponding to the 4 pages.
+
+All the css code is in one file. ( Apparently we have to this cuz TA and stuff )
+Structure of main.css:
+	- common css styles
+	- common media querys
+	- page specific css code
+		- 'normal' css styles
+		- media query specific for this page
