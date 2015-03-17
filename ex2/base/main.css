@@ -64,23 +64,46 @@ body {
 	position: relative;
 }
 
+#header {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+
+    justify-content: space-around;
+	
+}
+
 #title h1 {
 	padding: 20px;
 	font-size: 22px;
 }
 
+#header #menu {
+	float : left;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	margin : auto;
+}
+
 #header #menu a {
 	display: block;
 	float: left;
-	width : 19%;
-	margin-left: 10px;
+	width : 110px;
+	padding-left : 2px;
+	padding-right : 2px;
+	margin : auto;
 }
 
 #header #menu a img {
 	width: 100%;
 	height: 62px;
 	display: block;
-	
 }
 
 
@@ -101,6 +124,13 @@ div[role="main"]:after {
 #footer {
 	clear: both;
 	float: none;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+    justify-content: space-around;
 	border: 20px solid #dddddd;
 	border-top: none;
 	background: #027d8d;
@@ -113,9 +143,10 @@ div[role="main"]:after {
 }
 
 #footer .footer-entry {
-	width: 22.5%;
-	margin: 2% 0 0 2%;
-	float: left;
+	width : 200px;
+	margin-top : 2%;
+	margin-left : auto;
+	margin-right : auto;
 }
 
 #footer:after {
@@ -127,10 +158,6 @@ div[role="main"]:after {
 #wrap {
 	max-width: 1024px;
 	margin: 30px auto;
-}
-
-#header #menu {
-	height : 62px;
 }
 
 img.project {
@@ -159,68 +186,18 @@ p {
 		width: 40%;
 		background: #dddddd;
 	}
-	
-	#header {
-		height: 62px;
-	}
-
-	#header div {
-		float: left;
-	}
-	
-	#header #menu {
-		width : 56%;
-	}
-	
-	#header #menu a {
-		width : 19%;
-		margin-left: 10px;
-	}
-	#header #menu a:first-of-type {
-		margin-left: 55px;
-	}
 }
 
 /************** TABLET AND SMARTPHONE ***************/
 @media screen and (max-width:1023px) {	
 	#header {
-		height: 134px;
+		flex-direction : column;
 	}
-	
-	#title {
-		max-width : 422px;
-		width: 100%;
-		margin-left : auto;
-		margin-right : auto;
-	}
-
-	#title h1 {
-		padding: 20px;
-		font-size: 2.2em;
-		text-align : center;
-	}
-	
-	#header #menu {
-		max-width : 482px;
-		display : block;
-		margin-left : auto;
-		margin-right : auto;
-	}
-
 	#header #menu a {
-		max-width: 113px;
-		width : 23.5%;
-		margin-left: 2%;
+		margin-bottom : 10px;
 	}
-	
-	#header #menu a:first-of-type {
-		margin-left: 0px;
-	}	
-
-	#header #menu a img {
-		width: 100%;
-		height: 62px;
-		display: block;
+	#title {
+		margin : auto;
 	}
 }
 
@@ -229,6 +206,9 @@ p {
 @media screen and (max-width: 1023px) {
 	#wrap {
 		background: #dddddd;
+	}
+	#newmenu {
+		visibility : hidden;
 	}
 }
 
@@ -242,21 +222,7 @@ p {
 	#wrap {
 		width: 768px;
 	}
-	
-	#header #menu {
-		width : 96%;
-	}
-	
-	#footer .footer-entry {
-		width: 47%;
-		margin: 2% 0 0 2%;
-		float: left;
-		text-align: center;
-	}
-	
-	#footer .footer-entry:nth-of-type(2n+1) {
-		clear: both;
-	}
+		
 }
 
 /************** SMARTPHONE LANDSCAPE ****************/
@@ -271,10 +237,6 @@ p {
 		margin-bottom: 0;
 	}
 	
-	#header #menu {
-		width : 91.5%;
-	}
-	
 	div[role="main"] {
 		border: none;
 	}
@@ -284,16 +246,6 @@ p {
 		padding-bottom: 4%;
 	}
 	
-	#footer .footer-entry {
-		width: 44%;
-		margin: 4% 0 0 4%;
-		float: left;
-		text-align: center;
-	}
-	
-	#footer .footer-entry:nth-of-type(2n+1) {
-		clear: both;
-	}
 }
 
 /************** SMARTPHONE PORTRAIT ****************/
@@ -308,32 +260,6 @@ p {
 		margin-bottom: 0;
 	}
 	
-	#header {
-		height : 206px;
-	}
-	
-	#header #menu {
-		width : 100%;
-		max-width : 280px;
-		height : 144px;
-		padding-left : 20px;
-		padding-right : 20px;
-		margin-left : auto;
-		margin-right : auto;
-	}
-	
-	#header #menu a:nth-child(2n+1) {
-		clear : both;
-		margin-left : 0px;
-	}
-	
-	#header #menu a {
-		max-width: 113px;
-		width : 47%;
-		margin-left: 5%;
-		margin-bottom : 10px;
-	}
-	
 	div[role="main"] {
 		border: none;
 	}
@@ -342,14 +268,11 @@ p {
 		border: none;
 		padding-bottom: 1%;
 		padding-top: 4%;
+		flex-direction : column;
+		text-align : center;
 	}
 	
-	#footer .footer-entry {
-		width: 92%;
-		margin: 0 0 4% 4%;
-		float: none;
-		text-align: center;
-	}
+
 }
 
 /* styles for index page */
@@ -678,7 +601,7 @@ button {
 	}
 }
 
-/***************** NEW MENUE *******************/
+/***************** NEW MENU *******************/
 #newmenu {
 	/*box-sizing: content-box;*/
 	width: 150px;
