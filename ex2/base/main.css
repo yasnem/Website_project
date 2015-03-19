@@ -70,9 +70,9 @@ header {
 	display: -ms-flexbox;
 	display: -webkit-flex;
 	display: flex;
-
-    justify-content: space-around;
 	
+	align-content: flex-start;
+	padding-top: 30px;	
 }
 
 #title h1 {
@@ -157,7 +157,7 @@ footer:after {
 
 #wrap {
 	max-width: 1024px;
-	margin: 30px auto;
+	margin: 0 auto;
 }
 
 img.project {
@@ -192,10 +192,12 @@ p {
 @media screen and (max-width:1023px) {	
 	header {
 		flex-direction : column;
+		padding-top: 0;
 	}
 	header #menu a {
 		margin-bottom : 10px;
 	}
+	
 	#title {
 		margin : auto;
 	}
@@ -206,9 +208,6 @@ p {
 @media screen and (max-width: 1023px) {
 	#wrap {
 		background: #dddddd;
-	}
-	#newmenu {
-		visibility : hidden;
 	}
 }
 
@@ -603,43 +602,39 @@ button {
 
 /***************** NEW MENU *******************/
 #newmenu {
-	/*box-sizing: content-box;*/
-	width: 150px;
-	height: 150px;
-	background: #fff;
-	border: 15px solid #ffffff;
-	-webkit-border-radius: 15px;
-	-moz-border-radius: 15px;
-	border-radius: 15px;
-	opacity: 0.1;
-	transition: opacity 1s;
-	
+	opacity: 0.2;
+	z-index: 1;
 	position: absolute;
-	top: -10px;
-	left: 10px;
-	z-index: 10;
+	top: 0;
+	left: 0;
 }
 
-#newmenu:hover {
-	opacity: 1;
-	transition: opacity 0.5s;
+#newmenu #menuwrap {
+	width: 200px;
+	height: 200px;
+	display: block;
+	background: #fff;
+	border: 20px solid #ffffff;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
 }
 
 #newmenu #orange {
 	position: absolute;
-	width: 26px;
-	height: 26px;
-	top: -13px;
-	left: -13px;
+	width: 34px;
+	height: 34px;
+	top: 3px;
+	left: 3px;
 	z-index: 100;
 }
 
 #newmenu #star {
 	position: absolute;
-	width: 13px;
-	height: 13px;
-	top: -14px;
-	left: 15px;
+	width: 16px;
+	height: 16px;
+	top: 2px;
+	left: 40px;
 }
 
 #newmenu a.menu-entry {
@@ -671,10 +666,4 @@ button {
 	50% {transform: rotate(0deg) scale(1);}
 	75% {transform: rotate(-4deg) scale(1.05);}
 	100% {transform: rotate(0deg) scale(1);}
-}
-
-@media screen and (max-width:767px) {
-	#newmenu {
-		top: 10px;
-	}
 }
