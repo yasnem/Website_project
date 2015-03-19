@@ -64,7 +64,7 @@ body {
 	position: relative;
 }
 
-#header {
+header {
 	display: -webkit-box;
 	display: -moz-box;
 	display: -ms-flexbox;
@@ -80,7 +80,7 @@ body {
 	font-size: 22px;
 }
 
-#header #menu {
+header #menu {
 	float : left;
 	display: -webkit-box;
 	display: -moz-box;
@@ -91,7 +91,7 @@ body {
 	margin : auto;
 }
 
-#header #menu a {
+header #menu a {
 	display: block;
 	float: left;
 	width : 110px;
@@ -100,7 +100,7 @@ body {
 	margin : auto;
 }
 
-#header #menu a img {
+header #menu a img {
 	width: 100%;
 	height: 62px;
 	display: block;
@@ -121,7 +121,7 @@ div[role="main"]:after {
 	clear: both;
 }
 
-#footer {
+footer {
 	clear: both;
 	float: none;
 	display: -webkit-box;
@@ -142,14 +142,14 @@ div[role="main"]:after {
 	padding-bottom: 2%;
 }
 
-#footer .footer-entry {
+footer .footer-entry {
 	width : 200px;
 	margin-top : 2%;
 	margin-left : auto;
 	margin-right : auto;
 }
 
-#footer:after {
+footer:after {
 	content: ' ';
 	display: block;
 	clear: both;
@@ -190,10 +190,10 @@ p {
 
 /************** TABLET AND SMARTPHONE ***************/
 @media screen and (max-width:1023px) {	
-	#header {
+	header {
 		flex-direction : column;
 	}
-	#header #menu a {
+	header #menu a {
 		margin-bottom : 10px;
 	}
 	#title {
@@ -241,7 +241,7 @@ p {
 		border: none;
 	}
 	
-	#footer {
+	footer {
 		border: none;
 		padding-bottom: 4%;
 	}
@@ -264,7 +264,7 @@ p {
 		border: none;
 	}
 	
-	#footer {
+	footer {
 		border: none;
 		padding-bottom: 1%;
 		padding-top: 4%;
