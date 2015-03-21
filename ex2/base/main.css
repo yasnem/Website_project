@@ -52,6 +52,12 @@ strong {
 }
 /* end css reset */
 
+/********************************/
+/* PART 1: STYLES FOR ALL PAGES */
+/********************************/
+
+
+/********** GENERAL STYLES **********/
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -64,6 +70,11 @@ body {
 	position: relative;
 }
 
+p {
+	font-size: 1.5em;
+}
+
+/********** HEADER **********/
 header {
 	display: -webkit-box;
 	display: -moz-box;
@@ -106,8 +117,8 @@ header #menu a img {
 	display: block;
 }
 
-
-div[role="main"] {
+/********** MAIN **********/
+main[role="main"] {
 	clear: both;
 	border: 20px solid #dddddd;
 	font-size: 1.3em;
@@ -115,12 +126,19 @@ div[role="main"] {
 	width: 100%;
 }
 
-div[role="main"]:after {
+main[role="main"]:after {
 	content: ' ';
 	display: block;
 	clear: both;
 }
 
+/********** WRAPPER **********/
+#wrap {
+	max-width: 1024px;
+	margin: 0 auto;
+}
+
+/********** FOOTER **********/
 footer {
 	clear: both;
 	float: none;
@@ -130,7 +148,11 @@ footer {
 	display: -webkit-flex;
 	display: flex;
 	-webkit-flex-flow: row wrap;
-    justify-content: space-around;
+	flex-flow: row wrap;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-align-items: stretch;
+	align-items: stretch;
 	border: 20px solid #dddddd;
 	border-top: none;
 	background: #027d8d;
@@ -139,25 +161,19 @@ footer {
 	line-height: 1.2em;
 	text-align: justify;
 	width: 100%;
-	padding-bottom: 2%;
+	padding: 2% 1% 0;
 }
 
 footer .footer-entry {
-	width : 200px;
-	margin-top : 2%;
-	margin-left : auto;
-	margin-right : auto;
+	display: block;
+	flex: 1 1 221.4px;
+	margin: 0 1% 2%;
 }
 
 footer:after {
 	content: ' ';
 	display: block;
 	clear: both;
-}
-
-#wrap {
-	max-width: 1024px;
-	margin: 0 auto;
 }
 
 img.project {
@@ -175,432 +191,7 @@ img.qr {
 	height: 75px;
 }
 
-p {
-	font-size: 1.5em;
-}
-
-/**************** DESKTOP ****************/
-
-@media screen and (min-width:1024px) {
-	#title {
-		width: 40%;
-		background: #dddddd;
-	}
-}
-
-/************** TABLET AND SMARTPHONE ***************/
-@media screen and (max-width:1023px) {	
-	header {
-		flex-direction : column;
-		padding-top: 0;
-	}
-	header #menu a {
-		margin-bottom : 10px;
-	}
-	
-	#title {
-		margin : auto;
-	}
-}
-
-/************** TABLET & SMARTPHONE ****************/
-
-@media screen and (max-width: 1023px) {
-	#wrap {
-		background: #dddddd;
-	}
-}
-
-/************** TABLET PORTRAIT ****************/
-
-@media screen and (max-width: 1023px) and (min-width: 768px) {
-	body {
-		font-size : 65%;
-	}
-	
-	#wrap {
-		width: 768px;
-	}
-		
-}
-
-/************** SMARTPHONE LANDSCAPE ****************/
-
-@media screen and (max-width: 767px) and (min-width: 480px){
-	body {
-		font-size : 67.5%;
-	}
-	
-	#wrap {
-		margin-top: 0;
-		margin-bottom: 0;
-	}
-	
-	div[role="main"] {
-		border: none;
-	}
-	
-	footer {
-		border: none;
-		padding-bottom: 4%;
-	}
-	
-}
-
-/************** SMARTPHONE PORTRAIT ****************/
-
-@media screen and (max-width: 479px) {
-	body {
-		font-size : 70%;
-	}
-	
-	#wrap {
-		margin-top: 0;
-		margin-bottom: 0;
-	}
-	
-	div[role="main"] {
-		border: none;
-	}
-	
-	footer {
-		border: none;
-		padding-bottom: 1%;
-		padding-top: 4%;
-		flex-direction : column;
-		text-align : center;
-	}
-	
-
-}
-
-/* styles for index page */
-
-#indexmain {
-	background: black url(images/bg1.png) no-repeat center center;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-}
-
-#maincontent {
-	margin: 2%;
-	min-height: 490px;
-	padding: 2%;
-	background: #000000;
-	color: white;
-	opacity: 0.5;
-	width: 47%;
-}
-
-/***************** TABLET PORTRAIT *******************/
-
-@media screen and ( max-width:1023px ) and (min-width:768px) {
-	#maincontent {
-		width : 47%;
-	}
-}
-
-/***************** SMARTPHONE (LANDSCAPE AND PORTRAIT) *******************/
-
-@media screen and (max-width:767px) {
-	#indexmain {
-		padding: 4%;
-	}
-	
-	#maincontent {
-		margin: 0;
-		width : 100%;
-	}
-}
-
-/******************** styles for blog page **********************/
-
-#blogmain {
-	background: url(images/bg2.png) no-repeat top center;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-}
-
-ul#blog {
-	padding-bottom: 2%;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-flex-wrap: wrap;
-	-ms-flex-wrap: wrap;
-	flex-wrap: wrap;
-}
-
-ul#blog:after {
-	content: ' ';
-	clear: both;
-	display: block;
-}
-
-ul#blog li {
-	display: block;
-	float: left;
-	width: 47%;
-	margin: 2% 0 0 2%;
-	background: #ffffff;
-	opacity: 0.5;
-	padding: 2%;
-}
-
-ul#blog li:nth-child(2n+1) {
-	clear: both;
-}
-
-ul#blog li div {
-	height: 100%;
-}
-
-ul#blog li div div {
-	margin: 0;
-}
-
-ul#blog li div div img {
-	width: 100%;
-	max-width: 146px;
-	display: block;
-	float: left;
-	margin-right: 20px;
-	margin-bottom: 2px;
-}
-
-/***************** TABLET PORTRAIT *******************/
-
-@media screen and (max-width:1023px) and (min-width:768px) {
-	
-}
-
-/***************** SMARTPHONE (LANDSCAPE AND PORTRAIT) *******************/
-
-@media screen and (max-width:767px) {
-	ul#blog {
-		padding-bottom: 4%;
-	}
-	
-	ul#blog li {
-		width: 92%;
-		margin: 4% 0 0 4% !important;
-	}
-}
-
-
-/* styles for portfolio page */
-#portfoliomain {
-	background: black url(images/bg3.png) no-repeat top center;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-}
-
-ul#portfolio {
-	padding-bottom: 2%;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-flex-wrap: wrap;
-	-ms-flex-wrap: wrap;
-	flex-wrap: wrap;
-}
-
-ul#portfolio:after {
-	content: ' ';
-	clear: both;
-	display: block;
-}
-
-ul#portfolio li {
-	display: block;
-	float: left;
-	width: 22.5%;
-	margin: 2% 0 0 2%;
-	background: #ffffff;
-}
-
-ul#portfolio li:nth-child(4n+1) {
-	clear: both;
-}
-
-ul#portfolio li div img {
-	width: 100%;
-}
-
-ul#portfolio li div div {
-	margin: 8%;
-	color: #333333;
-}
-
-/***************** TABLET PORTRAIT *******************/
-
-@media screen and (max-width:1023px) and (min-width:768px) {
-	
-}
-
-/***************** SMARTPHONE LANDSCAPE *******************/
-
-@media screen and (max-width:767px) and (min-width:480px) {
-	ul#portfolio {
-		padding-bottom: 4%;
-	}
-	
-	ul#portfolio li {
-		width: 44%;
-		margin: 4% 0 0 4% !important;
-	}
-	
-	ul#portfolio li:nth-child(2n+1) {
-		clear: both;
-	}
-	
-	ul#portfolio li div div {
-		margin: 6%;
-	}
-}
-
-/***************** SMARTPHONE PORTRAIT *******************/
-
-@media screen and (max-width: 479px) {
-	ul#portfolio {
-		padding-bottom: 4%;
-	}
-	
-	ul#portfolio li {
-		width: 92%;
-		margin: 4% 0 0 4% !important;
-		clear: both;
-	}
-	
-	ul#portfolio li div div {
-		margin: 4%;
-	}
-}
-
-/* styles for contact us page */
-#contactusmain {
-	background: url(images/bg4.png) no-repeat top center;
-	color: white;
-	position: relative;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	width: 100%;
-	padding-bottom: 2%;
-}
-
-#contactustitle {
-	margin: 2% 0 20% 2%;
-	width: 96%;
-	float: none;
-}
-
-#contactustitle h1 {
-	font-size: 4.5em;
-}
-
-#form, #contact {
-	display: block;
-	width: 47%;
-	margin: 2% 0 0 2%;
-	float: left;
-	font-size: 1em;
-}
-
-.inputname {
-	float: left;
-}
-
-input {
-	float: right;
-	border: none;
-	padding: 1px;
-}
-
-textarea {
-	width: 100%;
-	height: 100%;
-	border: none;
-}
-
-button {
-	border: none;
-	background: #ffffff;
-	padding: 1%;
-	font-family: Times New Roman, serif;
-	font-size: 1em;
-}
-
-#contact {
-	color: black;
-	background: #ffffff;
-	opacity: 0.75;
-	padding: 2%;
-}
-
-#contact div:after {
-	content: ' ';
-	display: block;
-	clear: both;
-}
-
-.right-align {
-	float: right;
-	text-align: right;
-	clear: both;
-}
-
-/***************** TABLET PORTRAIT *******************/
-
-@media screen and (max-width:1023px) and (min-width:768px) {
-	
-}
-
-/***************** SMARTPHONE *******************/
-
-@media screen and (max-width:767px) {
-	.flexcontainer {
-		display: -webkit-box;
-		display: -moz-box;
-		display: -ms-flexbox;
-		display: -webkit-flex;
-		display: flex;
-		flex-direction: row-reverse;
-		flex-wrap: wrap;
-		align-items: flex-start;
-	}
-
-	#form {
-		order: 2;
-	}
-	
-	#contact {
-		order: 1;
-	}
-	
-	#contactusmain {
-		padding-bottom: 4%;
-	}
-	
-	#form, #contact {
-		width: 92%;
-		margin: 4% 4% 0 4%;
-		float: none;
-	}
-	
-	#contactustitle {
-		margin: 0 0 10% 4%;
-	}
-}
-
-/***************** NEW MENU *******************/
+/********** NEW MENU **********/
 #newmenu {
 	opacity: 0.2;
 	z-index: 1;
@@ -666,4 +257,365 @@ button {
 	50% {transform: rotate(0deg) scale(1);}
 	75% {transform: rotate(-4deg) scale(1.05);}
 	100% {transform: rotate(0deg) scale(1);}
+}
+
+/********** DESKTOP **********/
+@media screen and (min-width:1024px) {
+	#title {
+		width: 40%;
+		background: #dddddd;
+	}
+}
+
+/********** TABLET AND SMARTPHONE **********/
+@media screen and (max-width:1023px) {
+	header {
+		flex-direction: column;
+		padding-top: 0;
+	}
+	
+	header #menu a {
+		margin-bottom: 10px;
+	}
+	
+	#title {
+		margin: auto;
+	}
+	
+	#wrap {
+		background: #dddddd;
+	}
+}
+
+/********** TABLET PORTRAIT **********/
+
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+	body {
+		font-size : 65%;
+	}
+	
+	#wrap {
+		width: 768px;
+	}
+		
+}
+
+/********** SMARTPHONE LANDSCAPE **********/
+
+@media screen and (max-width: 767px) and (min-width: 480px) {
+	body {
+		font-size : 67.5%;
+	}
+	
+	#wrap {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	
+	main[role="main"] {
+		border: none;
+	}
+	
+	footer {
+		border: none;
+		padding: 4% 2% 0 2%;
+	}
+}
+
+/********** SMARTPHONE PORTRAIT **********/
+
+@media screen and (max-width: 479px) {
+	body {
+		font-size : 70%;
+	}
+	
+	#wrap {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	
+	main[role="main"] {
+		border: none;
+	}
+	
+	footer {
+		border: none;
+		padding: 4% 2% 0 2%;
+		flex-basis: 100%;
+		text-align: center;
+	}
+}
+
+/********************************/
+/* PART 2: STYLES FOR EACH PAGE */
+/********************************/
+
+/********** INDEX PAGE **********/
+
+#indexmain {
+	background: black url(images/bg1.png) no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#maincontent {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+	-webkit-justify-content: flex-start;
+	justify-content: flex-start;
+	-webkit-align-items: stretch;
+	align-items: stretch;
+	padding: 2% 1% 0;
+}
+
+#maincontent article {
+	display: block;
+	flex: 3 3;
+}
+
+#maincontent article.info {
+	width: 500px;
+	flex: 2 2;
+	margin: 0 1% 2%;
+	background: #000000;
+	color: white;
+	opacity: 0.5;
+	padding: 2%;
+}
+
+/* tablet portrait */
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+	#maincontent article.info {
+		flex: 3 3;
+	}
+}
+
+/* smartphone landscape */
+@media screen and (max-width: 767px) and (min-width: 480px) {
+	#maincontent article.info {
+		flex: 6 6;
+	}
+}
+
+/* smartphone portrait */
+@media screen and (max-width: 479px) {
+	#maincontent article.info {
+		min-width: 98%;
+	}
+}
+
+/********** BLOG PAGE **********/
+#blogmain {
+	background: url(images/bg2.png) no-repeat top center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#blog {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-align-items: stretch;
+	align-items: stretch;
+	padding: 2% 1% 0;
+}
+
+#blog article {
+	display: block;
+	flex: 1 1 462.2px;
+	margin: 0 1% 2%;
+	background: #ffffff;
+	opacity: 0.5;
+	padding: 2%;
+}
+
+#blog article figure {
+	float: left;
+}
+
+#blog article figure img {
+	width: 100%;
+	max-width: 146px;
+	display: block;
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 2px;
+}
+
+#blog article h2 {
+	display: inline;
+	font-weight: bold;
+	float: both;
+}
+
+#blog article p {
+	display: inline;
+	font-size: 1em;
+	float: both;
+}
+
+/* styles for portfolio page */
+#portfoliomain {
+	background: black url(images/bg3.png) no-repeat top center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#portfolio {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-align-items: stretch;
+	align-items: stretch;
+	padding: 2% 1% 0;
+}
+
+#portfolio article {
+	display: block;
+	flex: 1 1 221.4px;
+	margin: 0 1% 2%;
+	background: #ffffff;
+}
+
+#portfolio article figure img {
+	width: 100%;
+}
+
+#portfolio article hgroup {
+	clear: both;
+	margin: 8%;
+	color: #333333;
+}
+
+#portfolio article hgroup h2 {
+	font-weight: bold;
+}
+
+/* styles for contact us page */
+#contactusmain {
+	background: url(images/bg4.png) no-repeat top center;
+	color: white;
+	position: relative;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#contactus {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-align-items: stretch;
+	align-items: stretch;
+	padding: 2% 1% 0;
+}
+
+#contactustitle {
+	margin: 0 0 20% 0;
+	float: none;
+	flex: 1 1 100%;
+}
+
+#contactustitle h1 {
+	font-size: 4.5em;
+}
+
+#form, #contact {
+	display: block;
+	margin: 0 1% 2%;
+	flex: 1 1 300px;
+	float: left;
+	font-size: 1em;
+}
+
+.inputname {
+	float: left;
+}
+
+input {
+	float: right;
+	border: none;
+	padding: 1px;
+}
+
+textarea {
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+
+button {
+	border: none;
+	background: #ffffff;
+	padding: 1%;
+	font-family: Times New Roman, serif;
+	font-size: 1em;
+}
+
+#contact {
+	color: black;
+	background: #ffffff;
+	opacity: 0.75;
+	padding: 2%;
+}
+
+#contact div:after {
+	content: ' ';
+	display: block;
+	clear: both;
+}
+
+.right-align {
+	float: right;
+	text-align: right;
+	clear: both;
+}
+
+/* smartphone landscape and portrait */
+@media screen and (max-width:767px) {
+	#form {
+		order: 2;
+	}
+	
+	#contact {
+		order: 1;
+	}
+	
+	#form, #contact {
+		flex: 1 1 100%;
+	}
+	
+	#contactustitle {
+		margin: 0 0 10% 0;
+	}
 }
