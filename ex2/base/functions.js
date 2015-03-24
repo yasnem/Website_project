@@ -155,6 +155,7 @@ $(document).ready(function() {
 	/********** show menu **********/
 	function showMenu() {
 		var position = $(menu).position();
+		$(menu).removeClass("hidden");
 		// move menu a bit to the left if the full menu wouldn't be correctly displayed 
 		if ((position.left + menuwidth) > $(window).width()) {
 			$(menu).animate({left: $(window).width() - menuwidth}, "fast");
@@ -164,14 +165,13 @@ $(document).ready(function() {
 			$(menu).animate({top: $(window).height() - menuwidth}, "fast");
 		}
 		$("#menuwrap").animate({width: menuwidth, height: menuwidth},"slow");
-		$(star).show("slow");
-		$(menu).removeClass("hidden");
+		$(star).show("fast");
 	}
 	
 	/********** hide menu **********/
 	function hideMenu() {
+		$(menu).addClass("hidden");
 		$("#menuwrap").animate({width: 0, height: 0}, "slow");
 		$(star).hide("slow");
-		$(menu).addClass("hidden");
 	}
 });

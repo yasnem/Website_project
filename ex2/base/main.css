@@ -157,8 +157,6 @@ footer {
 	border-top: none;
 	background: #027d8d;
 	color: #ffffff;
-	font-size: 1.5em;
-	line-height: 1.2em;
 	text-align: justify;
 	width: 100%;
 	padding: 2% 1% 0;
@@ -166,8 +164,10 @@ footer {
 
 footer .footer-entry {
 	display: block;
-	flex: 1 1 221.4px;
+	flex: 1 1 13.5em;
 	margin: 0 1% 2%;
+	font-size: 1.5em;
+	line-height: 1.2em;
 }
 
 footer:after {
@@ -198,6 +198,10 @@ img.qr {
 	position: absolute;
 	top: 0;
 	left: 0;
+	border: 2px solid #dddddd;
+	-webkit-border-radius: 22px;
+	-moz-border-radius: 22px;
+	border-radius: 22px;
 }
 
 #newmenu #menuwrap {
@@ -437,7 +441,7 @@ img.qr {
 
 #blog article {
 	display: block;
-	flex: 1 1 462.2px;
+	flex: 1 1 25em;
 	margin: 0 1% 2%;
 	background: #ffffff;
 	opacity: 0.5;
@@ -495,7 +499,7 @@ img.qr {
 
 #portfolio article {
 	display: block;
-	flex: 1 1 221.4px;
+	flex: 1 1 16em;
 	margin: 0 1% 2%;
 	background: #ffffff;
 }
@@ -553,7 +557,7 @@ img.qr {
 #form, #contact {
 	display: block;
 	margin: 0 1% 2%;
-	flex: 1 1 300px;
+	flex: 1 1 30em;
 	float: left;
 	font-size: 1em;
 }
