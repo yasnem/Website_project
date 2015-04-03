@@ -109,4 +109,9 @@ function list_related_p() {
 	wp_reset_postdata();
 	return $output;
 }
+
+/************************************************************/
+/*                  FUNCTION FILES  						*/
+/************************************************************/
+include_once "functions_beni.php";
 ?>

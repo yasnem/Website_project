@@ -29,7 +29,7 @@
 							<input type="text" name="lastname" style="float:right;">
 
 							<br>
-							<textarea type="text" name="message" rows="7" cols="65" >	</textarea>
+							<textarea type="text" name="message" rows="7" cols="65" ></textarea>
 							<br>
 							<button type="button" style="background-color:#fafafa; color:#000;padding-left:5px;padding-right:5px;">
 								Submit
@@ -40,12 +40,11 @@
 
 					<div class="ctransbox">
 						<div class="full">
-							<strong style="float:left;">Email</strong><strong style="float:right;">larajade@larajade.co.uk</strong>
+							<strong style="float:left;">Email</strong><strong style="float:right;"><?php echo get_option('admin_email'); ?></strong>
 							<br>
-							<strong style="float:left;">Fax</strong><strong style="float:right;"> +44 (0) 1234 567891</strong>
+							<strong style="float:left;">Fax</strong><strong style="float:right;"><?php echo get_theme_mod('larajade_fax'); ?></strong>
 							<br>
-							<strong style="float:left;">Address: </strong><strong style="float:right;"> New Chrichton Cottage, Arradoul, Buckie, AB43 AP
-							Scotland UK</strong>
+							<strong style="float:left;">Address: </strong><strong style="float:right;"><?php echo str_replace("<br />", ", ", wpautop(get_theme_mod('larajade_address'))); ?></strong>
 						</div>
 					</div>
 
