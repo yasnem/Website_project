@@ -10,7 +10,7 @@ $custom_query = new WP_Query( $custom_query_args );
 
 // Index query arguments
 $index_query_args = array (
-	'page_id'  => '51', //79
+	'page_id'  => '79', 
 );
 
 // Custom query to retrieve the content of the index page
