@@ -10,11 +10,20 @@ $custom_query = new WP_Query( $custom_query_args );
 
 // Index query arguments
 $index_query_args = array (
-	'page_id'  => '79', 
+	'page_id'  => '51', //79
 );
 
 // Custom query to retrieve the content of the index page
 $index_query_args = new WP_Query( $index_query_args );
+
+// Custom query to retrieve the last post in the blog page
+$portfolio_query_args = array(
+	'post_type'  => 'portfolio',
+);
+
+// new query with custom arguments
+$portfolio_query = new WP_Query( $portfolio_query_args );
+
 
 ?>
 <div id="footer" style="min-height:250px;">
@@ -64,26 +73,41 @@ $index_query_args = new WP_Query( $index_query_args );
                 if($custom_query->have_posts()) : 
                     $custom_query->the_post();
                 ?>
-				<a class="plain-link" href="<?php the_permalink(); ?>"> <strong><?php the_title();?></strong></a>
+				<a class="plain-link" href="<?php the_permalink(); ?>"> <strong>My last post</strong></a>
 					</br>
                     </br>
-                    <?php echo excerpt(45); ?>
+                    <a class="plain-link" href="<?php the_permalink(); ?>"> <strong><?php the_title();?></strong></a> </br>
+                    <?php echo excerpt(40); ?>
                     </br>
                     <a class="link" href="<?php the_permalink(); ?>"><strong>More ...</strong></a>
 				
-                <?php //endwhile;
+                <?php 
                         else : echo  '<p> No content found</p>';
                     endif;
                  ?>
 				</div>
 				<div class="flex-item">
-					<strong>Last Project</strong>
-					<br>
-					</br>
-					Freelance WebSite
-					<br>
-					<br>
-					<img width="80%" src="<?php echoPicture($stylesheet_dir,'images/portfolio/p1.jpg');?>" >
+                    <?php
+                        if($portfolio_query->have_posts()) :
+                            $portfolio_query->the_post();
+                    ?>
+                    <a class="plain-link" href="<?php the_permalink(); ?>"> <strong>Last Project</strong></a> </br>
+					</br> 
+                    <a class="plain-link" href="<?php the_permalink(); ?>"> <strong><?php the_title();?></strong></a> </br>
+                    <?php if(has_post_thumbnail()) : ?>
+                            <a class="link" href="<?php the_permalink(); ?>">
+                            <?php the_post_thumbnail('thumbnail', array('class' => 'footer-thumbnail')); ?>
+                            </a> <?php
+                            else : echo excerpt(35); ?>
+                            </br>
+                            <a class="link" href="<?php the_permalink(); ?>"><strong>More ...</strong></a>
+                            <?php
+                            endif; 
+                        ?>
+                    <?php
+                        else : echo '<p>No content found</p>';
+                        endif;
+                    ?>
 				</div>
                 
 				<!-- </div> -->

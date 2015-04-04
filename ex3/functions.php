@@ -1,5 +1,4 @@
 <?php 
-add_theme_support('post-thumbnails');
 
 $stylesheet_url = get_bloginfo('stylesheet_url');
 $stylesheet_dir = get_bloginfo('stylesheet_directory');
@@ -8,6 +7,18 @@ $images_url = get_bloginfo('stylesheet_url').'/images/';
 function echoPicture($ssurl, $locurl) {
 	echo $ssurl.'/'.$locurl;
 }
+
+
+/************************************************************/
+/*                     Thumbnails size  					*/
+/************************************************************/
+function theme_setup() {
+    //Featured image support
+    add_theme_support('post-thumbnails');
+    add_image_size('small_thumbnails', 180, 120, true);
+}
+
+add_action('after_setup_theme', 'theme_setup');
 
 /************************************************************/
 /*                Custom Excerpt length 					*/

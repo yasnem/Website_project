@@ -434,6 +434,13 @@ figcaption.single > p{
 vertical-align:top;
   text-align:justify;
 }
+.footer-thumbnail {
+    width: 70%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 						/* JavaScript disabled */
 
