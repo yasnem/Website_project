@@ -569,6 +569,17 @@ a.link:hover {
 	color: black;
 }
 
+a.plain-link:link, a.plain-link:visited {
+    color: white;
+    text-decoration: none;
+}
+
+a.plain-link:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+
 a.titlelink {
 	text-decoration: none;
 	color: black;

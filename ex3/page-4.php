@@ -33,7 +33,7 @@ if ( $custom_query->have_posts() ) : ?>
     						<a href="<?php the_permalink(); ?>"><img src="<?php echo $image[0]; ?>" alt="" /></a>
 						<?php endif; ?> 		
 						<strong><?php the_title(); ?></strong><?php the_excerpt(); ?>
-						<a class="link" href="<?php the_permalink(); ?>">more ...</a>
+						<a class="link" href="<?php the_permalink(); ?>"><strong>More ...</strong></a>
 					</figcaption>
 				</figure>
 			</li>

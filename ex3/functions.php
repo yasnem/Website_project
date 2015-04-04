@@ -10,6 +10,28 @@ function echoPicture($ssurl, $locurl) {
 }
 
 /************************************************************/
+/*                Custom Excerpt length 					*/
+/************************************************************/
+
+function custom_excerpt_length() {
+    return 55; //Default value
+}
+
+add_filter('excerpt_length', 'custom_excerpt_length');
+
+function excerpt($limit) {
+      $excerpt = explode(' ', get_the_excerpt(), $limit);
+      if (count($excerpt)>=$limit) {
+        array_pop($excerpt);
+        $excerpt = implode(" ",$excerpt).' [...] ';
+      } else {
+        $excerpt = implode(" ",$excerpt);
+      } 
+      //$excerpt = preg_replace('`\[[^\]]*\]`','',$excerpt);
+      return $excerpt;
+}
+
+/************************************************************/
 /*             Custom Post Type Portfolio					*/
 /************************************************************/
 if( ! function_exists( 'create_portfolio_post_type' ) ) :	

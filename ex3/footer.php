@@ -10,7 +10,7 @@ $custom_query = new WP_Query( $custom_query_args );
 
 // Index query arguments
 $index_query_args = array (
-	'page_id'  => '79',
+	'page_id'  => '79', 
 );
 
 // Custom query to retrieve the content of the index page
@@ -39,9 +39,10 @@ $index_query_args = new WP_Query( $index_query_args );
                 if($index_query_args->have_posts()) : 
                     $index_query_args->the_post();
                 ?>
-					<strong>About Me</strong>
+					<a class="plain-link" href="<?php the_permalink(); ?>"> <strong>About Me</strong> </a>
 					<br><br>
-					<?php the_excerpt(); ?>
+					<?php echo excerpt(30); ?>
+                    </br>
                     <a class="link" href="<?php the_permalink(); ?>"><strong>More ...</strong></a>   
 					<br><br>
 					<strong>Follow me:</strong>
@@ -63,10 +64,11 @@ $index_query_args = new WP_Query( $index_query_args );
                 if($custom_query->have_posts()) : 
                     $custom_query->the_post();
                 ?>
-				<strong><?php the_title();?></strong>
+				<a class="plain-link" href="<?php the_permalink(); ?>"> <strong><?php the_title();?></strong></a>
 					</br>
                     </br>
-                    <?php the_excerpt(); ?>
+                    <?php echo excerpt(45); ?>
+                    </br>
                     <a class="link" href="<?php the_permalink(); ?>"><strong>More ...</strong></a>
 				
                 <?php //endwhile;
