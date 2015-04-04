@@ -1,5 +1,4 @@
 <?php 
-
 $stylesheet_url = get_bloginfo('stylesheet_url');
 $stylesheet_dir = get_bloginfo('stylesheet_directory');
 $images_url = get_bloginfo('stylesheet_url').'/images/';
@@ -7,7 +6,6 @@ $images_url = get_bloginfo('stylesheet_url').'/images/';
 function echoPicture($ssurl, $locurl) {
 	echo $ssurl.'/'.$locurl;
 }
-
 
 /************************************************************/
 /*                     Thumbnails size  					*/
@@ -17,7 +15,6 @@ function theme_setup() {
     add_theme_support('post-thumbnails');
     add_image_size('small_thumbnails', 180, 120, true);
 }
-
 add_action('after_setup_theme', 'theme_setup');
 
 /************************************************************/
@@ -45,7 +42,9 @@ function excerpt($limit) {
 /************************************************************/
 /*             Custom Post Type Portfolio					*/
 /************************************************************/
-if( ! function_exists( 'create_portfolio_post_type' ) ) :	
+
+if( ! function_exists( 'create_portfolio_post_type' ) ) :
+	
 	function create_portfolio_post_type() {
 		$labels = array(
 			'name'               => _x( 'Portfolio Entries', 'post type general name' ),
@@ -71,7 +70,9 @@ function excerpt($limit) {
 	    	'has_archive'   => true,
 	  	);
 	  	register_post_type( 'portfolio', $args );
-	}	add_action( 'init', 'create_portfolio_post_type' );endif;
+	}
+	add_action( 'init', 'create_portfolio_post_type' );
+endif;
 
 add_action( 'add_meta_boxes', 'portfolio_meta_box_add' );
 function portfolio_meta_box_add()

@@ -378,7 +378,6 @@ figcaption.single > p{
 								}
 								.blog_list__item figcaption
 								{
-									float: right;
 									padding: 1.25rem; /* 20 */
 								}
 								
@@ -602,4 +601,12 @@ div.helper {
 
 div.helper img {
 	width: 100%;
+}
+
+.footer-thumbnail {
+    width: 70%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

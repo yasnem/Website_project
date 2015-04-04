@@ -14,13 +14,14 @@ add_theme_support("custom-header", array(
 	'height' => 523
 	));
 
-
-add_action( 'customize_register', 'larajade_customize_register' );
 function larajade_customize_register( $wp_customize ) {
+	
+	/* remove header text color */
+	$wp_customize->remove_control('header_textcolor');
 	
 	/* body background color */
 	$wp_customize->add_setting( 'larajade_bodybgcolor', array(
-		'default' => '#474d51',
+		'default' => '#414141',
 		'type' => 'option',
 		'capability' => 'edit_theme_options'
 		)
@@ -38,7 +39,7 @@ function larajade_customize_register( $wp_customize ) {
 	
 	/* main background color */
 	$wp_customize->add_setting( 'larajade_bgcolor', array(
-		'default' => '#414141',
+		'default' => '#000000',
 		'type' => 'option',
 		'capability' => 'edit_theme_options'
 		)
@@ -50,6 +51,60 @@ function larajade_customize_register( $wp_customize ) {
 			'label' => __('Main Background Color', 'LaraJade'),
 			'section' => 'colors',
 			'settings' => 'larajade_bgcolor'
+			)
+		)
+	);
+	
+	/* border color */
+	$wp_customize->add_setting( 'larajade_bordercolor', array(
+		'default' => '#dddddd',
+		'type' => 'option',
+		'capability' => 'edit_theme_options'
+		)
+	);
+	$wp_customize->add_control( new WP_Customize_Color_Control(
+		$wp_customize,
+		'larajade_bordercolor',
+		array(
+			'label' => __('Border Color', 'LaraJade'),
+			'section' => 'colors',
+			'settings' => 'larajade_bordercolor'
+			)
+		)
+	);
+	
+	/* footer background color */
+	$wp_customize->add_setting( 'larajade_footerbgcolor', array(
+		'default' => '#027d8d',
+		'type' => 'option',
+		'capability' => 'edit_theme_options'
+		)
+	);
+	$wp_customize->add_control( new WP_Customize_Color_Control(
+		$wp_customize,
+		'larajade_footerbgcolor',
+		array(
+			'label' => __('Footer Background Color', 'LaraJade'),
+			'section' => 'colors',
+			'settings' => 'larajade_footerbgcolor'
+			)
+		)
+	);
+	
+	/* header text color */
+	$wp_customize->add_setting( 'larajade_headercolor', array(
+		'default' => '#000000',
+		'type' => 'option',
+		'capability' => 'edit_theme_options'
+		)
+	);
+	$wp_customize->add_control( new WP_Customize_Color_Control(
+		$wp_customize,
+		'larajade_headercolor',
+		array(
+			'label' => __('Header Text Color', 'LaraJade'),
+			'section' => 'colors',
+			'settings' => 'larajade_headercolor'
 			)
 		)
 	);
@@ -98,5 +153,15 @@ function larajade_customize_register( $wp_customize ) {
 			)
 		)
 	);
+}
+add_action( 'customize_register', 'larajade_customize_register' );
+
+function larajade_customize_css() {
+	echo "\n<style type=\"text/css\">\n";
+	echo "body, #header, .container {background-color: ".get_option('larajade_bodybgcolor')."; }\n";
+	echo "#header #header-left, #main-inner {background-color: ".get_option('larajade_bordercolor')."; }\n";
+	echo "h1 {color: ".get_option('larajade_headercolor')."; }\n";
+	echo "#footer {background-color: ".get_option('larajade_footerbgcolor')."; }\n";
+	echo "</style>\n";
 }
 ?>

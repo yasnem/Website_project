@@ -12,6 +12,7 @@
 		<script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
         <?php wp_head();?>
 		<link rel="stylesheet" href="<?php echo $stylesheet_url; ?>">
+		<?php larajade_customize_css(); ?>
 	</head>
 	<script>
 		$(document).ready(function() {
