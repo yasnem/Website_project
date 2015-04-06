@@ -15,7 +15,86 @@
 		<?php larajade_customize_css(); ?>
 	</head>
 	<script>
+        function SetToBold() {
+            document.execCommand('bold', false, null);
+        }
+        function SetToItalic() {
+            document.execCommand('italic', false, null);
+        }
+        function SetToUnderline() {
+            document.execCommand('underline', false, null);
+        }
+
 		$(document).ready(function() {
+            $('#submit_post').hide();
+            $('#confirmation_bar').hide();    
+            $('.text_custom').hide();
+            $('#fileToUpload').hide();
+
+            $('#edit_post').click(function() {
+                $('#confirmation_bar').hide();
+                $('.text_custom').toggle();
+                $('#fileToUpload').toggle();
+                $('#submit_post').toggle();
+
+                var full_post = $('#full_post');
+                var post = $('#post');
+                var post_title = $('#post_title');
+                var post_content = $('#post_content');
+                post_content.toggleClass("editable");
+                post_title.toggleClass("editable");
+                post.toggleClass("no_padding");
+                full_post.toggleClass("blog_list__item__inner");
+                
+                if(post_content.attr("contenteditable") == 'false') {
+                    post_content.attr("contenteditable", 'true');
+                    post_title.attr("contenteditable", 'true');
+                }
+                else {
+                    post_content.attr("contenteditable", 'false');
+                    post_title.attr("contenteditable", 'false');
+                }
+            })
+
+            $('#submit_post').click(function() {
+                $('#confirmation_bar').show();
+                document.getElementById('confirmation_bar').innerHTML = "Updating post";
+                var fd = null;
+                try {
+                    fd = new FormData();
+                } catch(e) {
+                    alert('This browser does not support image upload');
+                }
+                var post_content = document.getElementById("post_content").innerHTML;
+                var post_title = document.getElementById("post_title").innerHTML;
+                var file = $("#fileToUpload")[0].files[0];
+                var id = $(this).val();
+                fd.append('p', post_content);
+                fd.append('t', post_title);
+                fd.append('id', id);
+                fd.append('file', file);
+                /*var postData = {
+                    "p" : post_content,
+                    "t" : post_title,
+                    "id" : id,
+                    "file" : file
+                };*/
+                $.ajax({
+                    type: "POST",
+                    url: "wp-content//themes//LaraJade//edit_post.php",
+                    data: fd, 
+                    contentType : false,
+                    processData:false,
+                    success: function(){
+                       $('#confirmation_bar').css('background-color', '#027D8D');
+                       document.getElementById('confirmation_bar').innerHTML = "Post updated";
+                    },
+                     error: function (xhr, ajaxOptions, thrownError){
+                        alert(xhr.status);
+                        alert(thrownError);
+                    }
+                });
+            })
 
 			$(window).resize(function() {
 				//$("#log").append("<div>Handler for .resize() called.</div>");

@@ -14,7 +14,7 @@ figure /* see normalize.css */
 	font-size: 100%;
 	font-family: inherit;
 	font-weight: inherit;
-	font-style: inherit;
+	/*font-style: inherit;*/
 	line-height: inherit;
 	vertical-align: baseline;
 	border: 0;
@@ -97,12 +97,12 @@ em
 
 b
 {
-	font-weight: inherit;
+	/*font-weight: inherit;*/
 }
 
 i
 {
-	font-style: inherit;
+	/*font-style: inherit;*/
 }
 
 ins

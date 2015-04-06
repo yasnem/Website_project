@@ -134,6 +134,96 @@
 
 }
 
+/* ******Post-update form ****** */
+
+.editable{
+    border: 1px solid #A8DDFC;
+    box-shadow: 0px 0px 7px #A8DDFC;
+    border-radius: 4px;
+    opacity: 1;
+	filter: alpha(opacity=60); /* For IE8 and earlier */												    
+	width: 100%;
+	color: #474d51;
+	background-color: #fff;
+	overflow: hidden;
+    padding: 20px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+	
+}
+
+#confirmation_bar {
+    width: 100%;
+    text-align: center;
+    background-color: #309302;
+    color: #fff;
+    font-size: 1.5em;
+    border: 1px solid #fff;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#full_post .no_padding {
+    padding: 0px;
+}
+
+#post_title .editable {
+    padding: 10px;
+}
+
+#post_update {
+    margin-top: 10px;
+    display: -webkit-flex;
+    -webkit-flex-direction: row;
+    -webkit-justify-content: space-between;
+}
+
+
+#post_update button {
+    font-size: 1.3em;
+    background-color: #EEE;
+    color: Black;
+    border: 1.5px solid #777;
+    border-radius: 3px;
+    float: left;
+    padding: 10px;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+#post_update button.text_custom {
+    width: 50px;
+}
+.underline {
+    text-decoration: underline;
+}
+#post_update button:hover {
+    background-color: #666;
+    color: White;
+    border-style: outset;
+    border-color: #333;
+}
+
+#post_update button.primary {
+    color: white;
+    background-color: #0558a6;
+}
+
+#post_update button.primary:hover {
+    background-color: #052E57;
+    border-style: outset;
+    border-color: #333;
+}
+
+#post_update button.success {
+    background-color: #309302;
+    color: white;  
+}
+#post_update button.success:hover {
+    background-color: #1e5903;
+}
+
+
 h1.heading {
     font-size: 3em;
     padding-bottom: 1.725rem;
@@ -384,6 +474,7 @@ figcaption.single > p{
 
 					#footer
 					{
+                        clear: both;
 						color: #FFF;
 						background-color: #027D8D;
 						text-align: left;
