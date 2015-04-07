@@ -52,7 +52,7 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 <!-- End admin part-->
 <?php 
-    else : echo '<h1>Not admin</h1>';
+    else : // echo '<h1>Not admin</h1>';
     endif;?>
 
 

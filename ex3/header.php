@@ -88,6 +88,7 @@
                     success: function(){
                        $('#confirmation_bar').css('background-color', '#027D8D');
                        document.getElementById('confirmation_bar').innerHTML = "Post updated";
+                       location.reload();
                     },
                      error: function (xhr, ajaxOptions, thrownError){
                         alert(xhr.status);
