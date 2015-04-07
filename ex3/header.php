@@ -41,10 +41,8 @@
                 var post = $('#post');
                 var post_title = $('#post_title');
                 var post_content = $('#post_content');
-                post_content.toggleClass("editable");
-                post_title.toggleClass("editable");
-                post.toggleClass("no_padding");
-                full_post.toggleClass("blog_list__item__inner");
+                post_content.toggleClass('editable');
+                post_title.toggleClass('editable');
                 
                 if(post_content.attr("contenteditable") == 'false') {
                     post_content.attr("contenteditable", 'true');
@@ -75,14 +73,19 @@
                 fd.append('file', file);
                 $.ajax({
                     type: "POST",
-                    url: "wp-content//themes//LaraJade//edit_post.php",
-                    data: fd, 
+                    url: "wp-content/themes/LaraJade/edit_post.php",
+                    data: fd,
                     contentType : false,
                     processData:false,
                     success: function(){
                        $('#confirmation_bar').css('background-color', '#027D8D');
                        document.getElementById('confirmation_bar').innerHTML = "Post updated";
-                       if(file != null) location.reload();
+                       if (file != null) {
+                          location.reload();
+                       }
+                       else {
+                       	  $('#edit_post').trigger('click');
+                       }
                     },
                      error: function (){
                         alert('Error');

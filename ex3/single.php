@@ -12,7 +12,7 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
 					<figcaption id = "post">
 						<strong><div id="post_title" contenteditable ="false"><?php the_title(); ?></div></strong>
                         <div id="post_content" contenteditable ="false"><?php the_content(); ?></div>
-						<?php echo list_related_p(); ?>
+						<div id="related_content"><?php echo list_related_p(); ?></div>
 					</figcaption>
 				</figure>
 			</li>
