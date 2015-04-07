@@ -73,12 +73,6 @@
                 fd.append('t', post_title);
                 fd.append('id', id);
                 fd.append('file', file);
-                /*var postData = {
-                    "p" : post_content,
-                    "t" : post_title,
-                    "id" : id,
-                    "file" : file
-                };*/
                 $.ajax({
                     type: "POST",
                     url: "wp-content//themes//LaraJade//edit_post.php",
@@ -88,11 +82,10 @@
                     success: function(){
                        $('#confirmation_bar').css('background-color', '#027D8D');
                        document.getElementById('confirmation_bar').innerHTML = "Post updated";
-                       location.reload();
+                       if(file != null) location.reload();
                     },
-                     error: function (xhr, ajaxOptions, thrownError){
-                        alert(xhr.status);
-                        alert(thrownError);
+                     error: function (){
+                        alert('Error');
                     }
                 });
             })
