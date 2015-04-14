@@ -8,20 +8,15 @@ $custom_query_args = array(
 // new query with custom arguments
 $custom_query = new WP_Query( $custom_query_args );
 
-// Index query arguments
-$index_query_args = array (
-	'page_id'  => '79', 
-);
-
 // Custom query to retrieve the content of the index page
-$index_query_args = new WP_Query( $index_query_args );
+//$index_query_args = new WP_Query( $index_query_args );
+$index_query_args = new WP_Query( 'pagename=index' );
 
 // Custom query to retrieve the last post in the blog page
 $portfolio_query_args = array(
 	'post_type'  => 'portfolio',
 );
 
-// new query with custom arguments
 $portfolio_query = new WP_Query( $portfolio_query_args );
 
 
