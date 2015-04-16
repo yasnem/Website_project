@@ -24,7 +24,7 @@
 					<div style="float:left;overflow: hidden;vertical-align: bottom;">
 						<form method="post" action="<?php echo the_permalink();?>">
 							<p style="float:left;">
-								First name test:
+								First name:
 							</p>
 
 							<input type="text" name="firstname" style="float:right; font: 1em arial; color:#000;">
