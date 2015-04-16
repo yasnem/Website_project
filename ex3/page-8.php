@@ -27,25 +27,26 @@
 								First name test:
 							</p>
 
-							<input type="text" name="firstname" style="float:right;">
+							<input type="text" name="firstname" style="float:right; font: 1em arial; color:#000;">
 							<br>
 							<p style="float:left;">
 								Last name:
 							</p>
 
-							<input type="text" name="lastname" style="float:right;">
+							<input type="text" name="lastname" style="float:right;  font:1em arial; color:#000;">
 
 							<br>
-							<textarea type="text" name="message" rows="7" cols="65" ></textarea>
+							<textarea type="text" name="message" rows="7" cols="65" style="font:1em arial; color:#000;"></textarea>
 							<br>
 							<button name="submit" style="background-color:#fafafa; color:#000;padding-left:5px;padding-right:5px;">
 								Submit
 							</button>
 						</form>
-						<p style="color: blue; background: white">
-								<?php if ( $mail_sent){
-									echo "Mail has been sent to ".get_option("blogname");
-								} ?>
+						<p style="background: #fff; opacity:0.5; margin-top:5px; font: 1em arial; color:red; display:inline-block">
+							<?php if ( $mail_sent){
+								echo "Mail has been sent to ".get_option("blogname");
+							} ?>
+							<br>
 						</p>
 					</div>
 					<br>
