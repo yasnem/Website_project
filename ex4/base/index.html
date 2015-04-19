@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.4, maximum-scale=0.4, user-scalable=no" />
+    <title>Continuous Tilting Example</title>
+
+    <style>
+	
+/* OK STUDENT */
+			body {
+			background: white;
+			}
+             .gallery_class {
+			 
+			-webkit-box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.75);
+			-moz-box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.75);
+			box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.75);
+
+			 margin-top:10px; margin-left:10px;max-width:200px; height:200px;}
+			 .wrp {height:auto; display:inline;
+
+			 }
+			 
+			 .notselected {
+			 -webkit-box-shadow: 0px 0px 0px 3px rgba(0,0,0,0.75);
+			-moz-box-shadow: 0px 0px 0px 3px rgba(0,0,0,0.75);
+			box-shadow: 0px 0px 0px 3px rgba(0,0,0,0.75);
+			 }
+			 .selected {
+			 -webkit-box-shadow: 0px 0px 0px 3px red;
+			-moz-box-shadow: 0px 0px 0px 3px red;
+			box-shadow: 0px 0px 0px 3px red;
+			 }
+        
+		
+		#touch { position: absolute;width: 100%; height:80%;}
+ /* OK STUDENT */
+    .centerimg {
+	  
+	  top: 10px;
+	  position: relative;
+	  left: 10%;
+	  width: 80%;
+	}
+	
+	#info {
+	position:absolute;
+	bottom:0%;
+	right: 10%;
+	}
+    </style>
+
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery_tiltandtap.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
+	
+</head>
+<body>
+<!-- <button type="button" id = "btn">Click Me!</button> !-->
+
+<div class="thumbs-block" id="thumbs-block">
+   
+        <div class="wrp"><img id="img1" class="gallery_class selected" src="img/img1.jpg" /></div>
+        <div class="wrp"><img id="img2" class="gallery_class notselected" src="img/img2.jpg" /></div>
+        <div class="wrp"><img id="img3" class="gallery_class notselected" src="img/img3.jpg" /></div>
+        <div class="wrp"><img id="img4" class="gallery_class notselected" src="img/img4.jpg"  /></div>
+</div>
+<div id= "touch" >
+
+<div>
+<!--   USE THIS DIV AS THE TARGET FOR THE TAP HOLD INTERACTION  -->
+<p id="info"></p>
+</div>
+</div>
+<br>
+
+
+</body>
+</html>
