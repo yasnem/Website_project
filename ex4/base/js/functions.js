@@ -1,7 +1,8 @@
 $(document).ready(function() {
 	var map = { "img1" : 1, "img2" : 2, "img3" : 3 , "img4" : 4}
 	var map_info = { "img1" : "ETH Terrasse", "img2" : "ETH Main Building, interior", "img3" : "ETH Main Building", "img4" : "ETH Main Building 2"}
-
+	
+	var visible = false;
 	$('#big_img').hide();
 	
 	// *********** IMAGE SELECTION *************
@@ -24,7 +25,7 @@ $(document).ready(function() {
 			$('#'+child).addClass("selected");
 			$('#'+child).removeClass("notselected");
 		}
-		
+		if(visible) showImage();
 	}
 	function changeSelectionLeft ()
 	{
@@ -37,7 +38,7 @@ $(document).ready(function() {
 			$('#'+child).addClass("selected");
 			$('#'+child).removeClass("notselected");
 		}
-		
+		if(visible) showImage();
 	}
 	
 	// *********** BIGGER IMAGE *************
@@ -51,9 +52,11 @@ $(document).ready(function() {
 		var img = $(".selected").attr("src");
 		$('#big_img').attr("src", img);
 		$('#big_img').show();
+		visible = true;
 	}
 	function hideImage () {
 		$('#big_img').hide();
+		visible = false;
 	}
 	
 });
