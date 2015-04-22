@@ -15,10 +15,10 @@ $(document).ready(function() {
 	$("#touch").tiltandtap({
 		onTiltRight    : changeSelectionRight,
 		onTiltLeft 	   : changeSelectionLeft,
+		onTiltUp    : setStartTime,
+		onTiltDown  : checkUpDownMotion,
 		tiltUp    : { onTiltUp: showImage, interaction : {type: "press", element: "touch"}},
 		tiltDown  : { onTiltDown: hideImage, interaction : {type: "press", element: "touch"}},
-		onTiltUp    : setUpFlag,
-		onTiltDown  : checkUpFlag,
 	});
 	
 	function changeSelectionRight ()
@@ -75,13 +75,12 @@ $(document).ready(function() {
 		$("#info").text(map_info[img]);
 	}
 	
-	function setUpFlag() {
+	function setStartTime() {
 		var d = new Date();
 		startTime = d.getTime();
-		upFlag = true;
 	}
 	
-	function checkUpFlag() {
+	function checkUpDownMotion() {
 		var d = new Date();
 		var endTime = d.getTime();
 		
@@ -89,6 +88,6 @@ $(document).ready(function() {
 			updateText();
 			$("#info").toggle();
 		}
-		upFlag = false;
+		startTime = 0;
 	}
 });
