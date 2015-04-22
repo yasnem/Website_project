@@ -12,7 +12,7 @@ $(document).ready(function() {
 	
 	// *********** IMAGE SELECTION *************
 	
-	$("#touch").tiltandtap({
+	$("body").tiltandtap({
 		onTiltRight    : changeSelectionRight,
 		onTiltLeft 	   : changeSelectionLeft,
 		onTiltUp    : setStartTime,
