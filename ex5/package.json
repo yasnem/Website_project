@@ -1,0 +1,17 @@
+{
+  "name": "GalleryRemote",
+  "version": "0.1.0",
+  "author": "Maria Husmann <husmann@inf.ethz.ch>",
+  "description": "A remote control for an image gallery",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": ">=0.12.x"
+  },
+  "dependencies": {
+    "express": "^4.12.3"
+  },
+  "devDependencies": {
+  }
+}

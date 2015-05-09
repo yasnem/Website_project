@@ -1,0 +1,25 @@
+img {
+    max-width: 40%;
+    margin: auto;
+    display:inline-block;
+    margin: 4%;
+}
+
+.selected {
+    border: 2px solid #a932ff;
+    margin: 3.5%;
+}
+
+button {
+    margin: 8px;
+}
+
+#menu {
+    display: none;
+    margin: 4%;
+}
+
+#menu button {
+    font-size: 75%;
+}
+
