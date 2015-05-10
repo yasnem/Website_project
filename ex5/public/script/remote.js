@@ -1,5 +1,6 @@
 var currentImage = 0; // the currently selected image
 var imageCount = 7; // the maximum number of images available
+var socket;
 
 function showImage (index){
     // Update selection on remote
@@ -8,9 +9,7 @@ function showImage (index){
     document.querySelector("img.selected").classList.toggle("selected");
     images[index].classList.toggle("selected");
 
-    // Send the command to the screen
-    // TODO
-    alert("TODO send the index to the screen")
+	socket.emit('img index', index);
 }
 
 function initialiseGallery(){
@@ -42,5 +41,5 @@ document.addEventListener("DOMContentLoaded", function(event) {
 });
 
 function connectToServer(){
-    // TODO connect to the socket.io server
+    socket = io();
 }

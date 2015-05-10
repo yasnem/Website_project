@@ -1,6 +1,8 @@
 var devicename; // the name of this screen and specified in the URL
 var imageCount = 7; // the maximum number of images available
 
+var socket = io();
+
 document.addEventListener("DOMContentLoaded", function(event) {
     devicename = getQueryParams().name;
     if (devicename) {
@@ -44,5 +46,8 @@ function getQueryParams() {
 
 
 function connectToServer(){
-    // TODO connect to the socket.io server
+    var socket = io();
+	socket.on('img index', function(index){
+		showImage(index);
+	});
 }
