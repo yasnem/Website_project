@@ -41,23 +41,42 @@ document.addEventListener("DOMContentLoaded", function(event) {
 });
 
 function connectToServer(){
-    
+    // Notifies the server that this socket is a remote
+	socket.emit('remote');
 }
+/*
+	Adds name and button to the list.
+*/
+function addToList(name, id) {
+	$('#menu_list').append($('<li>').attr("id", id));
+	$('#'+id).text(name);
+	$('#'+id).append($('<button class = "pure-button" name = "connect_button">').text('Connect'));
+}
+
+/*
+	As soon as the remote connects to the system, it receives the
+	list of connected screens. 
+*/
+socket.on('connected screens', function(connectedScreens) {
+	for(i = 0; i < connectedScreens.length; i++) {
+		var screen = connectedScreens[i];
+		addToList(screen.name, screen.id);
+	}
+});
+
 /* When a new screen is connected to the system, this 
    function is executed. 
    A new list item is added, containing the name of the 
    device and a button.
    */
 socket.on('device name', function(name, id){
-	$('#menu_list').append($('<li>').attr("id", id));
-	$('#'+id).text(name);
-	$('#'+id).append($('<button class = "pure-button" name = "connect_button">').text('Connect'));
+	addToList(name, id);
 	// Function to be performed on the click of this button
 	$("#"+id+" > button").click(function() {
 		if($(this).text() == 'Connect') {
 			// Requests the server to add this device
 			// to the room of tuned devices
-			socket.emit('tune device', id);
+			socket.emit('tune device', id, currentImage);
 		}
 		else  {
 			// Requests the server to remove this
