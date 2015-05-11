@@ -1,6 +1,6 @@
 var currentImage = 0; // the currently selected image
 var imageCount = 7; // the maximum number of images available
-var socket;
+var socket = io();
 
 function showImage (index){
     // Update selection on remote
@@ -41,5 +41,44 @@ document.addEventListener("DOMContentLoaded", function(event) {
 });
 
 function connectToServer(){
-    socket = io();
+    
 }
+/* When a new screen is connected to the system, this 
+   function is executed. 
+   A new list item is added, containing the name of the 
+   device and a button.
+   */
+socket.on('device name', function(name, id){
+	$('#menu_list').append($('<li>').attr("id", id));
+	$('#'+id).text(name);
+	$('#'+id).append($('<button class = "pure-button" name = "connect_button">').text('Connect'));
+	// Function to be performed on the click of this button
+	$("#"+id+" > button").click(function() {
+		if($(this).text() == 'Connect') {
+			// Requests the server to add this device
+			// to the room of tuned devices
+			socket.emit('tune device', id);
+		}
+		else  {
+			// Requests the server to remove this
+			// device from the room of connected devices
+			socket.emit('tune off', id);
+		}
+	});
+});
+/*  Once a device has been added to the room, the 
+	button changes text */
+socket.on('tuning completed', function(id) {
+	$("#"+id+" > button").text('Disconnect');
+});
+/* Once a device has been removed from the room,
+	the button changes text*/
+socket.on('tuning off completed', function(id) {
+	$("#"+id+" > button").text('Connect');
+});
+/* Once a device leaves the system, its name is 
+	removed from the list */
+socket.on('user disconnected', function(id) {
+	$('#'+id).remove();
+});
+

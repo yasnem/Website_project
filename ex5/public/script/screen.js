@@ -44,10 +44,17 @@ function getQueryParams() {
     return params;
 }
 
-
 function connectToServer(){
-    var socket = io();
-	socket.on('img index', function(index){
-		showImage(index);
-	});
+	// Send screen name
+	socket.emit('device name', devicename);
 }
+
+// Show the image selected by the remote
+socket.on('img index', function(index){
+	showImage(index);
+});
+
+// Called when the remote disconnects the user
+socket.on('tune off', function() {
+	clearImage();
+});
