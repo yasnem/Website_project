@@ -51,26 +51,6 @@ function addToList(name, id) {
 	$('#menu_list').append($('<li>').attr("id", id));
 	$('#'+id).text(name);
 	$('#'+id).append($('<button class = "pure-button" name = "connect_button">').text('Connect'));
-}
-
-/*
-	As soon as the remote connects to the system, it receives the
-	list of connected screens. 
-*/
-socket.on('connected screens', function(connectedScreens) {
-	for(i = 0; i < connectedScreens.length; i++) {
-		var screen = connectedScreens[i];
-		addToList(screen.name, screen.id);
-	}
-});
-
-/* When a new screen is connected to the system, this 
-   function is executed. 
-   A new list item is added, containing the name of the 
-   device and a button.
-   */
-socket.on('device name', function(name, id){
-	addToList(name, id);
 	// Function to be performed on the click of this button
 	$("#"+id+" > button").click(function() {
 		if($(this).text() == 'Connect') {
@@ -84,19 +64,49 @@ socket.on('device name', function(name, id){
 			socket.emit('tune off', id);
 		}
 	});
+}
+
+/*
+	As soon as the remote connects to the system, it receives the
+	list of connected screens and then displays it. 
+*/
+socket.on('connected screens', function(connectedScreens) {
+	for(i = 0; i < connectedScreens.length; i++) {
+		var screen = connectedScreens[i];
+		addToList(screen.name, screen.id);
+	}
 });
-/*  Once a device has been added to the room, the 
-	button changes text */
+
+/* 
+	When a new screen is connected to the system, this 
+	function is executed. 
+	A new list item is added, containing the name of the 
+	device and a button.
+*/
+socket.on('device name', function(name, id){
+	addToList(name, id);
+});
+
+/*
+	Once a device has been added to the room, the 
+	button changes text 
+*/
 socket.on('tuning completed', function(id) {
 	$("#"+id+" > button").text('Disconnect');
 });
-/* Once a device has been removed from the room,
-	the button changes text*/
+
+/*
+	Once a device has been removed from the room,
+	the button changes text
+*/
 socket.on('tuning off completed', function(id) {
 	$("#"+id+" > button").text('Connect');
 });
-/* Once a device leaves the system, its name is 
-	removed from the list */
+
+/*
+	Once a device leaves the system, its name is 
+	removed from the list 
+*/
 socket.on('user disconnected', function(id) {
 	$('#'+id).remove();
 });
